@@ -1,0 +1,97 @@
+---
+- name: change hosts
+  copy:
+    src: /etc/hosts
+    dest: /etc/
+  tags: common
+
+- name: register hostname
+  shell: cat /etc/hosts |grep `ip a |grep inet |grep -v inet6 |grep -v 127.0.0.1 | head -n 1 |awk '{print $2}'|awk -F '/' '{print $1}'` |awk '{print $2}'
+  register: myname
+  tags: common
+
+- name: set hostname
+  shell: hostnamectl set-hostname "{{myname.stdout}}"
+
+- name: display hostname
+  debug: msg="{{myname.stdout}}"
+  tags: common
+
+- name: copy mesosphere package
+  copy:
+    src: mesosphere-el-repo-7-1.noarch.rpm
+    dest: /tmp/mesosphere-el-repo-7-1.noarch.rpm
+  tags: common
+
+- name: install mesosphere package
+  yum: name="/tmp/mesosphere-el-repo-7-1.noarch.rpm" state=present
+  tags: common
+
+- name: disable selinux
+  selinux:
+    state: disabled
+  tags: common
+
+- name: create jdk path
+  file: path=/usr/local/java state=directory
+  tags: jdk
+
+- name: copy jdk file
+  copy:
+    src: jdk-8u221-linux-x64.tar.gz
+    dest: /tmp
+  tags: jdk
+
+- name: Unarchive jdk
+  unarchive:
+    src: /tmp/jdk-8u221-linux-x64.tar.gz
+    dest: /usr/local/java
+  tags: jdk
+
+- name: copy jdk env .bash_profile
+  copy:
+    src: .bash_profile
+    dest: /usr/local/java
+    mode: 755
+  tags: jdk
+
+- name: enable jdk env
+  shell: sh /usr/local/java/.bash_profile
+  tags: jdk
+
+- name: update env
+  shell: source /etc/profile
+  tags: jdk
+
+- name: install mesos and iptables-services
+  yum:
+    name: '{{ item }}'
+    state: installed
+  with_items:
+    - iptables-services
+    - mesos
+  tags: common
+
+- name: enable iptables
+  shell: systemctl enable iptables
+  tags: common
+
+- name: start iptables
+  shell: systemctl start iptables
+  tags: common
+
+- name: save iptables
+  shell: iptables-save
+  tags: common
+
+- name: config zk
+  copy:
+    src: zk
+    dest: /etc/mesos/zk
+
+- name: stop firewalld
+  shell: systemctl stop firewalld
+  tags: common
+- name: disable firewalld
+  shell: systemctl disable firewalld
+  tags: common

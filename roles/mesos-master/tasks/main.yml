@@ -1,0 +1,12 @@
+---
+- name: iptabls add 5050
+  shell: iptables -A INPUT -p tcp -m state --state NEW -m tcp --dport 5050 -j ACCEPT
+  tags: mesos-master
+
+- name: iptabls save
+  shell: iptables-save
+  tags: mesos-master
+
+- name: start mesos-master
+  service: name=mesos-master state=restarted
+  tags: mesos-master

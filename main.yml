@@ -1,0 +1,34 @@
+---
+- hosts: all
+  roles:
+    - common
+  remote_user: root
+
+- hosts: zookeeper
+  roles:
+    - zookeeper
+  remote_user: root
+
+- hosts: master
+  roles:
+    - mesos-master
+  remote_user: root
+
+- hosts: zookeeper
+  roles:
+    - zookeeper
+  remote_user: root
+
+- hosts: slave
+  roles:
+    - mesos-slave
+  remote_user: root
+- hosts: marathon
+  roles:
+    - marathon
+  remote_user: root
+
+- hosts: marathon
+  roles:
+    - chronos
+  remote_user: root

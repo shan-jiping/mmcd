@@ -1,0 +1,16 @@
+---
+- name: install chronos
+  yum: name=chronos state=latest
+  tags: chronos
+
+- name: iptabls add 4400
+  shell: iptables -A INPUT -p tcp -m state --state NEW -m tcp --dport 4400 -j ACCEPT
+  tags: chronos
+
+- name: iptabls save
+  shell: iptables-save
+  tags: chronos
+
+- name: start chronos
+  service: name=chronos state=restarted
+  tags: chronos

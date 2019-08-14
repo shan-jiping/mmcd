@@ -1,0 +1,65 @@
+---
+- name: copy zk package
+  copy:
+    src: zookeeper-3.4.14.tar.gz
+    dest: /usr/local
+  tags: zookeeper
+
+- name: unarchive zk package
+  unarchive:
+    src: /usr/local/zookeeper-3.4.14.tar.gz
+    dest: /usr/local
+  tags : zookeeper
+
+- name : rename zk path
+  shell: mv /usr/local/zookeeper-3.4.14 /usr/local/zookeeper
+  tags : zookeeper
+
+- name: create zk dataDir
+  file: path=/usr/local/zookeeper/data state=directory
+  tags: zookeeper
+
+- name: copy zk config
+  copy: 
+    src: zoo.cfg
+    dest: /usr/local/zookeeper/conf
+  tags: zookeeper
+
+- name: register myid
+  shell: cat /usr/local/zookeeper/conf/zoo.cfg |grep $HOSTNAME | awk -F '=' '{print $1}'|awk -F '.' '{print $2}'
+  register: myid
+  tags: zookeeper
+
+- name: set myid
+  shell: echo "{{myid.stdout}}" >> /usr/local/zookeeper/data/myid
+  tags: zookeeper
+
+- name: copy service 
+  copy:
+    src: zookeeper.service
+    dest: /usr/lib/systemd/system
+  tags: zookeeper
+
+- name: iptabls add 2181
+  shell: iptables -A INPUT -p tcp -m state --state NEW -m tcp --dport 2181 -j ACCEPT
+  tags: zookeeper
+
+- name: iptabls add 2888
+  shell: iptables -A INPUT -p tcp -m state --state NEW -m tcp --dport 2888 -j ACCEPT
+  tags: zookeeper
+
+- name: iptabls add 3888
+  shell: iptables -A INPUT -p tcp -m state --state NEW -m tcp --dport 3888 -j ACCEPT
+  tags: zookeeper
+
+- name: iptabls save
+  shell: iptables-save
+  tags: zookeeper
+
+- name: Enabling zookeeper.service
+  shell: systemctl disable zookeeper.service
+  tags: zookeeper
+
+- name: start ZooKeeper
+  service: name=zookeeper state=restarted
+  tags: zookeeper

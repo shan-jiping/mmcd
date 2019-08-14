@@ -1,0 +1,1 @@
+zk://mesos-master1:2181,mesos-slave1:2181,mesos-slave2:2181/mesos

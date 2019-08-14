@@ -1,0 +1,14 @@
+######################################
+###### Environment Configuration #####
+######################################
+
+# Setting --mesos_user
+# ------------------------
+MARATHON_MESOS_USER=root
+
+# Setting JAVA_OPTS
+# -----------------
+# JAVA_OPTS="-Dpidfile.path=/var/run/marathon/marathon.pid"
+
+MARATHON_MASTER="zk://mesos-master1:2181,mesos-slave1:2181,mesos-slave2:2181/mesos"
+MARATHON_ZK="zk://mesos-master1:2181,mesos-slave1:2181,mesos-slave2:2181/marathon"

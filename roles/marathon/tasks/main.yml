@@ -1,0 +1,38 @@
+---
+- name: install marathon
+  yum: name=marathon state=latest
+  tags: marathon
+
+- name: create conf path
+  file: path=/etc/marathon/conf state=directory
+  tags: marathon
+
+- name: copy zk config
+  copy: 
+    src: zk
+    dest: /etc/marathon/conf
+  tags: marathon
+
+- name: copy master config
+  copy:
+    src: zk
+    dest: /etc/marathon/conf
+  tags: marathon
+
+- name: copy default config
+  copy:
+    src: marathon
+    dest: /etc/default
+  tags: marathon
+
+- name: iptabls add 8080
+  shell: iptables -A INPUT -p tcp -m state --state NEW -m tcp --dport 8080 -j ACCEPT
+  tags: marathon
+
+- name: iptabls save
+  shell: iptables-save
+  tags: marathon
+
+- name: start marathon
+  service: name=marathon state=restarted
+  tags: marathon

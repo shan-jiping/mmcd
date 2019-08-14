@@ -1,0 +1,39 @@
+---
+- name: install mesos docker
+  yum:
+    name: '{{ item }}'
+    state: installed
+  with_items:
+    - docker
+    - mesos
+  tags: mesos-slave
+
+- name: containerizers
+  shell: echo 'docker,mesos' > /etc/mesos-slave/containerizers
+  tags: mesos-slave
+
+- name: executor_registration_timeout
+  shell: echo '5mins' > /etc/mesos-slave/executor_registration_timeout
+  tags: mesos-slave
+
+- name: copy zk config
+  copy:
+    src: zk
+    dest: /etc/mesos
+  tags: mesos-slave
+
+- name: iptabls add 5051
+  shell: iptables -A INPUT -p tcp -m state --state NEW -m tcp --dport 5051 -j ACCEPT
+  tags: mesos-master
+
+- name: iptabls save
+  shell: iptables-save
+  tags: mesos-master
+
+- name: start mesos-slave
+  service: name=mesos-slave state=restarted
+  tags: mesos-slave
+
+- name: start docker
+  service: name=docker state=restarted
+  tags: mesos-slave

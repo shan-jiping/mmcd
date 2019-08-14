@@ -1,0 +1,1344 @@
+2019-08-13 01:51:26,602 p=21672 u=root |  PLAY [all] **********************************************************************************************************************************************************************************************************************************
+2019-08-13 01:51:26,640 p=21672 u=root |  TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************************
+2019-08-13 01:51:38,983 p=21672 u=root |  ok: [mesos-master1]
+2019-08-13 01:51:39,075 p=21672 u=root |  ok: [mesos-slave1]
+2019-08-13 01:51:39,133 p=21672 u=root |  ok: [mesos-slave2]
+2019-08-13 01:51:39,158 p=21672 u=root |  TASK [common : change hosts] ****************************************************************************************************************************************************************************************************************
+2019-08-13 01:51:40,940 p=21672 u=root |  ok: [mesos-master1]
+2019-08-13 01:51:41,175 p=21672 u=root |  changed: [mesos-slave1]
+2019-08-13 01:51:41,253 p=21672 u=root |  changed: [mesos-slave2]
+2019-08-13 01:51:41,276 p=21672 u=root |  TASK [common : copy repo config file] *******************************************************************************************************************************************************************************************************
+2019-08-13 01:51:43,658 p=21672 u=root |   [WARNING]: Consider using yum, dnf or zypper module rather than running rpm
+
+2019-08-13 01:51:43,659 p=21672 u=root |  changed: [mesos-slave1]
+2019-08-13 01:51:43,669 p=21672 u=root |  changed: [mesos-master1]
+2019-08-13 01:51:44,002 p=21672 u=root |  changed: [mesos-slave2]
+2019-08-13 01:51:44,024 p=21672 u=root |  TASK [common : install java and iptables-services] ******************************************************************************************************************************************************************************************
+2019-08-13 01:51:55,511 p=21672 u=root |  changed: [mesos-master1] => (item=[u'java', u'iptables-services'])
+2019-08-13 01:52:38,149 p=21672 u=root |  changed: [mesos-slave1] => (item=[u'java', u'iptables-services'])
+2019-08-13 01:52:38,426 p=21672 u=root |  changed: [mesos-slave2] => (item=[u'java', u'iptables-services'])
+2019-08-13 01:52:38,453 p=21672 u=root |  TASK [common : stop firewalld] **************************************************************************************************************************************************************************************************************
+2019-08-13 01:52:40,349 p=21672 u=root |  changed: [mesos-slave1]
+2019-08-13 01:52:40,356 p=21672 u=root |  changed: [mesos-slave2]
+2019-08-13 01:52:40,540 p=21672 u=root |  changed: [mesos-master1]
+2019-08-13 01:52:40,549 p=21672 u=root |   [WARNING]: Could not match supplied host pattern, ignoring: mesos-master
+
+2019-08-13 01:52:40,550 p=21672 u=root |  PLAY [mesos-master] *************************************************************************************************************************************************************************************************************************
+2019-08-13 01:52:40,550 p=21672 u=root |  skipping: no hosts matched
+2019-08-13 01:52:40,550 p=21672 u=root |  PLAY RECAP **********************************************************************************************************************************************************************************************************************************
+2019-08-13 01:52:40,550 p=21672 u=root |  mesos-master1              : ok=5    changed=3    unreachable=0    failed=0   
+2019-08-13 01:52:40,550 p=21672 u=root |  mesos-slave1               : ok=5    changed=4    unreachable=0    failed=0   
+2019-08-13 01:52:40,551 p=21672 u=root |  mesos-slave2               : ok=5    changed=4    unreachable=0    failed=0   
+2019-08-13 01:56:53,923 p=22175 u=root |  PLAY [all] **********************************************************************************************************************************************************************************************************************************
+2019-08-13 01:56:53,941 p=22175 u=root |  TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************************
+2019-08-13 01:57:05,743 p=22175 u=root |  ok: [mesos-slave1]
+2019-08-13 01:57:05,800 p=22175 u=root |  ok: [mesos-master1]
+2019-08-13 01:57:05,832 p=22175 u=root |  ok: [mesos-slave2]
+2019-08-13 01:57:05,846 p=22175 u=root |  TASK [common : change hosts] ****************************************************************************************************************************************************************************************************************
+2019-08-13 01:57:07,526 p=22175 u=root |  ok: [mesos-master1]
+2019-08-13 01:57:07,553 p=22175 u=root |  ok: [mesos-slave1]
+2019-08-13 01:57:07,590 p=22175 u=root |  ok: [mesos-slave2]
+2019-08-13 01:57:07,615 p=22175 u=root |  TASK [common : copy repo config file] *******************************************************************************************************************************************************************************************************
+2019-08-13 01:57:09,693 p=22175 u=root |   [WARNING]: Consider using yum, dnf or zypper module rather than running rpm
+
+2019-08-13 01:57:09,694 p=22175 u=root |  fatal: [mesos-master1]: FAILED! => {"changed": true, "cmd": "rpm -Uvh http://repos.mesosphere.io/el/7/noarch/RPMS/mesosphere-el-repo-7-1.noarch.rpm", "delta": "0:00:01.074316", "end": "2019-08-13 01:57:09.639301", "msg": "non-zero return code", "rc": 1, "start": "2019-08-13 01:57:08.564985", "stderr": "warning: /var/tmp/rpm-tmp.D1WUjB: Header V4 RSA/SHA1 Signature, key ID e56151bf: NOKEY\n\tpackage mesosphere-el-repo-7-1.noarch is already installed", "stderr_lines": ["warning: /var/tmp/rpm-tmp.D1WUjB: Header V4 RSA/SHA1 Signature, key ID e56151bf: NOKEY", "\tpackage mesosphere-el-repo-7-1.noarch is already installed"], "stdout": "Retrieving http://repos.mesosphere.io/el/7/noarch/RPMS/mesosphere-el-repo-7-1.noarch.rpm\nPreparing...                          ########################################", "stdout_lines": ["Retrieving http://repos.mesosphere.io/el/7/noarch/RPMS/mesosphere-el-repo-7-1.noarch.rpm", "Preparing...                          ########################################"]}
+2019-08-13 01:57:09,704 p=22175 u=root |  fatal: [mesos-slave1]: FAILED! => {"changed": true, "cmd": "rpm -Uvh http://repos.mesosphere.io/el/7/noarch/RPMS/mesosphere-el-repo-7-1.noarch.rpm", "delta": "0:00:01.102547", "end": "2019-08-13 01:57:10.374498", "msg": "non-zero return code", "rc": 1, "start": "2019-08-13 01:57:09.271951", "stderr": "warning: /var/tmp/rpm-tmp.RauCx8: Header V4 RSA/SHA1 Signature, key ID e56151bf: NOKEY\n\tpackage mesosphere-el-repo-7-1.noarch is already installed", "stderr_lines": ["warning: /var/tmp/rpm-tmp.RauCx8: Header V4 RSA/SHA1 Signature, key ID e56151bf: NOKEY", "\tpackage mesosphere-el-repo-7-1.noarch is already installed"], "stdout": "Retrieving http://repos.mesosphere.io/el/7/noarch/RPMS/mesosphere-el-repo-7-1.noarch.rpm\nPreparing...                          ########################################", "stdout_lines": ["Retrieving http://repos.mesosphere.io/el/7/noarch/RPMS/mesosphere-el-repo-7-1.noarch.rpm", "Preparing...                          ########################################"]}
+2019-08-13 01:57:09,705 p=22175 u=root |  fatal: [mesos-slave2]: FAILED! => {"changed": true, "cmd": "rpm -Uvh http://repos.mesosphere.io/el/7/noarch/RPMS/mesosphere-el-repo-7-1.noarch.rpm", "delta": "0:00:01.060576", "end": "2019-08-13 01:57:10.462169", "msg": "non-zero return code", "rc": 1, "start": "2019-08-13 01:57:09.401593", "stderr": "warning: /var/tmp/rpm-tmp.JMsA06: Header V4 RSA/SHA1 Signature, key ID e56151bf: NOKEY\n\tpackage mesosphere-el-repo-7-1.noarch is already installed", "stderr_lines": ["warning: /var/tmp/rpm-tmp.JMsA06: Header V4 RSA/SHA1 Signature, key ID e56151bf: NOKEY", "\tpackage mesosphere-el-repo-7-1.noarch is already installed"], "stdout": "Retrieving http://repos.mesosphere.io/el/7/noarch/RPMS/mesosphere-el-repo-7-1.noarch.rpm\nPreparing...                          ########################################", "stdout_lines": ["Retrieving http://repos.mesosphere.io/el/7/noarch/RPMS/mesosphere-el-repo-7-1.noarch.rpm", "Preparing...                          ########################################"]}
+2019-08-13 01:57:09,708 p=22175 u=root |  	to retry, use: --limit @/root/mmcd/main.retry
+
+2019-08-13 01:57:09,709 p=22175 u=root |  PLAY RECAP **********************************************************************************************************************************************************************************************************************************
+2019-08-13 01:57:09,709 p=22175 u=root |  mesos-master1              : ok=2    changed=0    unreachable=0    failed=1   
+2019-08-13 01:57:09,710 p=22175 u=root |  mesos-slave1               : ok=2    changed=0    unreachable=0    failed=1   
+2019-08-13 01:57:09,710 p=22175 u=root |  mesos-slave2               : ok=2    changed=0    unreachable=0    failed=1   
+2019-08-13 01:57:36,696 p=22452 u=root |  PLAY [all] **********************************************************************************************************************************************************************************************************************************
+2019-08-13 01:57:36,731 p=22452 u=root |  TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************************
+2019-08-13 01:57:48,496 p=22452 u=root |  ok: [mesos-master1]
+2019-08-13 01:57:48,594 p=22452 u=root |  ok: [mesos-slave1]
+2019-08-13 01:57:48,607 p=22452 u=root |  ok: [mesos-slave2]
+2019-08-13 01:57:48,623 p=22452 u=root |  TASK [common : change hosts] ****************************************************************************************************************************************************************************************************************
+2019-08-13 01:57:50,323 p=22452 u=root |  ok: [mesos-slave2]
+2019-08-13 01:57:50,340 p=22452 u=root |  ok: [mesos-slave1]
+2019-08-13 01:57:50,358 p=22452 u=root |  ok: [mesos-master1]
+2019-08-13 01:57:50,370 p=22452 u=root |  TASK [common : copy repo config file] *******************************************************************************************************************************************************************************************************
+2019-08-13 01:57:52,251 p=22452 u=root |   [WARNING]: Consider using yum, dnf or zypper module rather than running rpm
+
+2019-08-13 01:57:52,252 p=22452 u=root |  fatal: [mesos-slave1]: FAILED! => {"changed": true, "cmd": "rpm -Uvh http://repos.mesosphere.io/el/7/noarch/RPMS/mesosphere-el-repo-7-1.noarch.rpm", "delta": "0:00:00.948310", "end": "2019-08-13 01:57:52.922918", "msg": "non-zero return code", "rc": 1, "start": "2019-08-13 01:57:51.974608", "stderr": "warning: /var/tmp/rpm-tmp.LpKXqF: Header V4 RSA/SHA1 Signature, key ID e56151bf: NOKEY\n\tpackage mesosphere-el-repo-7-1.noarch is already installed", "stderr_lines": ["warning: /var/tmp/rpm-tmp.LpKXqF: Header V4 RSA/SHA1 Signature, key ID e56151bf: NOKEY", "\tpackage mesosphere-el-repo-7-1.noarch is already installed"], "stdout": "Retrieving http://repos.mesosphere.io/el/7/noarch/RPMS/mesosphere-el-repo-7-1.noarch.rpm\nPreparing...                          ########################################", "stdout_lines": ["Retrieving http://repos.mesosphere.io/el/7/noarch/RPMS/mesosphere-el-repo-7-1.noarch.rpm", "Preparing...                          ########################################"]}
+2019-08-13 01:57:52,261 p=22452 u=root |  fatal: [mesos-slave2]: FAILED! => {"changed": true, "cmd": "rpm -Uvh http://repos.mesosphere.io/el/7/noarch/RPMS/mesosphere-el-repo-7-1.noarch.rpm", "delta": "0:00:00.941864", "end": "2019-08-13 01:57:53.026107", "msg": "non-zero return code", "rc": 1, "start": "2019-08-13 01:57:52.084243", "stderr": "warning: /var/tmp/rpm-tmp.b2as9B: Header V4 RSA/SHA1 Signature, key ID e56151bf: NOKEY\n\tpackage mesosphere-el-repo-7-1.noarch is already installed", "stderr_lines": ["warning: /var/tmp/rpm-tmp.b2as9B: Header V4 RSA/SHA1 Signature, key ID e56151bf: NOKEY", "\tpackage mesosphere-el-repo-7-1.noarch is already installed"], "stdout": "Retrieving http://repos.mesosphere.io/el/7/noarch/RPMS/mesosphere-el-repo-7-1.noarch.rpm\nPreparing...                          ########################################", "stdout_lines": ["Retrieving http://repos.mesosphere.io/el/7/noarch/RPMS/mesosphere-el-repo-7-1.noarch.rpm", "Preparing...                          ########################################"]}
+2019-08-13 01:57:52,272 p=22452 u=root |  fatal: [mesos-master1]: FAILED! => {"changed": true, "cmd": "rpm -Uvh http://repos.mesosphere.io/el/7/noarch/RPMS/mesosphere-el-repo-7-1.noarch.rpm", "delta": "0:00:00.932822", "end": "2019-08-13 01:57:52.219577", "msg": "non-zero return code", "rc": 1, "start": "2019-08-13 01:57:51.286755", "stderr": "warning: /var/tmp/rpm-tmp.M3ttv9: Header V4 RSA/SHA1 Signature, key ID e56151bf: NOKEY\n\tpackage mesosphere-el-repo-7-1.noarch is already installed", "stderr_lines": ["warning: /var/tmp/rpm-tmp.M3ttv9: Header V4 RSA/SHA1 Signature, key ID e56151bf: NOKEY", "\tpackage mesosphere-el-repo-7-1.noarch is already installed"], "stdout": "Retrieving http://repos.mesosphere.io/el/7/noarch/RPMS/mesosphere-el-repo-7-1.noarch.rpm\nPreparing...                          ########################################", "stdout_lines": ["Retrieving http://repos.mesosphere.io/el/7/noarch/RPMS/mesosphere-el-repo-7-1.noarch.rpm", "Preparing...                          ########################################"]}
+2019-08-13 01:57:52,277 p=22452 u=root |  	to retry, use: --limit @/root/mmcd/main.retry
+
+2019-08-13 01:57:52,278 p=22452 u=root |  PLAY RECAP **********************************************************************************************************************************************************************************************************************************
+2019-08-13 01:57:52,279 p=22452 u=root |  mesos-master1              : ok=2    changed=0    unreachable=0    failed=1   
+2019-08-13 01:57:52,279 p=22452 u=root |  mesos-slave1               : ok=2    changed=0    unreachable=0    failed=1   
+2019-08-13 01:57:52,279 p=22452 u=root |  mesos-slave2               : ok=2    changed=0    unreachable=0    failed=1   
+2019-08-13 02:03:05,408 p=22761 u=root |  PLAY [all] **********************************************************************************************************************************************************************************************************************************
+2019-08-13 02:03:05,434 p=22761 u=root |  TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************************
+2019-08-13 02:03:17,256 p=22761 u=root |  ok: [mesos-master1]
+2019-08-13 02:03:17,311 p=22761 u=root |  ok: [mesos-slave1]
+2019-08-13 02:03:17,323 p=22761 u=root |  ok: [mesos-slave2]
+2019-08-13 02:03:17,334 p=22761 u=root |  TASK [common : change hosts] ****************************************************************************************************************************************************************************************************************
+2019-08-13 02:03:19,106 p=22761 u=root |  ok: [mesos-slave1]
+2019-08-13 02:03:19,151 p=22761 u=root |  ok: [mesos-master1]
+2019-08-13 02:03:19,165 p=22761 u=root |  ok: [mesos-slave2]
+2019-08-13 02:03:19,179 p=22761 u=root |  TASK [common : copy mesosphere package] *****************************************************************************************************************************************************************************************************
+2019-08-13 02:03:20,814 p=22761 u=root |  changed: [mesos-master1]
+2019-08-13 02:03:20,818 p=22761 u=root |  changed: [mesos-slave2]
+2019-08-13 02:03:20,824 p=22761 u=root |  changed: [mesos-slave1]
+2019-08-13 02:03:20,835 p=22761 u=root |  TASK [common : install mesosphere package] **************************************************************************************************************************************************************************************************
+2019-08-13 02:03:21,829 p=22761 u=root |   [WARNING]: Consider using yum, dnf or zypper module rather than running rpm
+
+2019-08-13 02:03:21,831 p=22761 u=root |  fatal: [mesos-master1]: FAILED! => {"changed": true, "cmd": "rpm -Uvh /tmp/mesosphere-el-repo-7-1.noarch.rpm", "delta": "0:00:00.067383", "end": "2019-08-13 02:03:21.789700", "msg": "non-zero return code", "rc": 1, "start": "2019-08-13 02:03:21.722317", "stderr": "warning: /tmp/mesosphere-el-repo-7-1.noarch.rpm: Header V4 RSA/SHA1 Signature, key ID e56151bf: NOKEY\n\tpackage mesosphere-el-repo-7-1.noarch is already installed", "stderr_lines": ["warning: /tmp/mesosphere-el-repo-7-1.noarch.rpm: Header V4 RSA/SHA1 Signature, key ID e56151bf: NOKEY", "\tpackage mesosphere-el-repo-7-1.noarch is already installed"], "stdout": "Preparing...                          ########################################", "stdout_lines": ["Preparing...                          ########################################"]}
+2019-08-13 02:03:21,897 p=22761 u=root |  fatal: [mesos-slave1]: FAILED! => {"changed": true, "cmd": "rpm -Uvh /tmp/mesosphere-el-repo-7-1.noarch.rpm", "delta": "0:00:00.072866", "end": "2019-08-13 02:03:22.576953", "msg": "non-zero return code", "rc": 1, "start": "2019-08-13 02:03:22.504087", "stderr": "warning: /tmp/mesosphere-el-repo-7-1.noarch.rpm: Header V4 RSA/SHA1 Signature, key ID e56151bf: NOKEY\n\tpackage mesosphere-el-repo-7-1.noarch is already installed", "stderr_lines": ["warning: /tmp/mesosphere-el-repo-7-1.noarch.rpm: Header V4 RSA/SHA1 Signature, key ID e56151bf: NOKEY", "\tpackage mesosphere-el-repo-7-1.noarch is already installed"], "stdout": "Preparing...                          ########################################", "stdout_lines": ["Preparing...                          ########################################"]}
+2019-08-13 02:03:21,959 p=22761 u=root |  fatal: [mesos-slave2]: FAILED! => {"changed": true, "cmd": "rpm -Uvh /tmp/mesosphere-el-repo-7-1.noarch.rpm", "delta": "0:00:00.085238", "end": "2019-08-13 02:03:22.734833", "msg": "non-zero return code", "rc": 1, "start": "2019-08-13 02:03:22.649595", "stderr": "warning: /tmp/mesosphere-el-repo-7-1.noarch.rpm: Header V4 RSA/SHA1 Signature, key ID e56151bf: NOKEY\n\tpackage mesosphere-el-repo-7-1.noarch is already installed", "stderr_lines": ["warning: /tmp/mesosphere-el-repo-7-1.noarch.rpm: Header V4 RSA/SHA1 Signature, key ID e56151bf: NOKEY", "\tpackage mesosphere-el-repo-7-1.noarch is already installed"], "stdout": "Preparing...                          ########################################", "stdout_lines": ["Preparing...                          ########################################"]}
+2019-08-13 02:03:21,964 p=22761 u=root |  	to retry, use: --limit @/root/mmcd/main.retry
+
+2019-08-13 02:03:21,965 p=22761 u=root |  PLAY RECAP **********************************************************************************************************************************************************************************************************************************
+2019-08-13 02:03:21,966 p=22761 u=root |  mesos-master1              : ok=3    changed=1    unreachable=0    failed=1   
+2019-08-13 02:03:21,966 p=22761 u=root |  mesos-slave1               : ok=3    changed=1    unreachable=0    failed=1   
+2019-08-13 02:03:21,967 p=22761 u=root |  mesos-slave2               : ok=3    changed=1    unreachable=0    failed=1   
+2019-08-13 02:14:02,982 p=23169 u=root |  PLAY [all] **********************************************************************************************************************************************************************************************************************************
+2019-08-13 02:14:03,002 p=23169 u=root |  TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************************
+2019-08-13 02:14:15,430 p=23169 u=root |  ok: [mesos-master1]
+2019-08-13 02:14:15,544 p=23169 u=root |  ok: [mesos-slave1]
+2019-08-13 02:14:15,584 p=23169 u=root |  ok: [mesos-slave2]
+2019-08-13 02:14:15,605 p=23169 u=root |  TASK [common : change hosts] ****************************************************************************************************************************************************************************************************************
+2019-08-13 02:14:17,487 p=23169 u=root |  ok: [mesos-master1]
+2019-08-13 02:14:17,500 p=23169 u=root |  ok: [mesos-slave1]
+2019-08-13 02:14:17,506 p=23169 u=root |  ok: [mesos-slave2]
+2019-08-13 02:14:17,518 p=23169 u=root |  TASK [common : copy mesosphere package] *****************************************************************************************************************************************************************************************************
+2019-08-13 02:14:18,771 p=23169 u=root |  ok: [mesos-master1]
+2019-08-13 02:14:18,817 p=23169 u=root |  ok: [mesos-slave1]
+2019-08-13 02:14:18,878 p=23169 u=root |  ok: [mesos-slave2]
+2019-08-13 02:14:18,892 p=23169 u=root |  TASK [common : install mesosphere package] **************************************************************************************************************************************************************************************************
+2019-08-13 02:14:20,613 p=23169 u=root |  ok: [mesos-slave1]
+2019-08-13 02:14:20,639 p=23169 u=root |  ok: [mesos-master1]
+2019-08-13 02:14:20,734 p=23169 u=root |  ok: [mesos-slave2]
+2019-08-13 02:14:20,751 p=23169 u=root |  TASK [common : disable selinux] *************************************************************************************************************************************************************************************************************
+2019-08-13 02:14:22,508 p=23169 u=root |   [WARNING]: SELinux state temporarily changed from 'enforcing' to 'permissive'. State change will take effect next reboot.
+
+2019-08-13 02:14:22,509 p=23169 u=root |  changed: [mesos-master1]
+2019-08-13 02:14:22,544 p=23169 u=root |  changed: [mesos-slave1]
+2019-08-13 02:14:22,554 p=23169 u=root |  changed: [mesos-slave2]
+2019-08-13 02:14:22,577 p=23169 u=root |  TASK [common : install java and iptables-services] ******************************************************************************************************************************************************************************************
+2019-08-13 02:14:25,748 p=23169 u=root |  ok: [mesos-slave1] => (item=[u'java', u'iptables-services'])
+2019-08-13 02:14:25,853 p=23169 u=root |  ok: [mesos-master1] => (item=[u'java', u'iptables-services'])
+2019-08-13 02:14:26,038 p=23169 u=root |  ok: [mesos-slave2] => (item=[u'java', u'iptables-services'])
+2019-08-13 02:14:26,058 p=23169 u=root |  TASK [common : stop firewalld] **************************************************************************************************************************************************************************************************************
+2019-08-13 02:14:27,083 p=23169 u=root |  changed: [mesos-slave1]
+2019-08-13 02:14:27,104 p=23169 u=root |  changed: [mesos-master1]
+2019-08-13 02:14:27,187 p=23169 u=root |  changed: [mesos-slave2]
+2019-08-13 02:14:27,198 p=23169 u=root |   [WARNING]: Could not match supplied host pattern, ignoring: mesos-master
+
+2019-08-13 02:14:27,199 p=23169 u=root |  PLAY [mesos-master] *************************************************************************************************************************************************************************************************************************
+2019-08-13 02:14:27,199 p=23169 u=root |  skipping: no hosts matched
+2019-08-13 02:14:27,200 p=23169 u=root |  PLAY RECAP **********************************************************************************************************************************************************************************************************************************
+2019-08-13 02:14:27,200 p=23169 u=root |  mesos-master1              : ok=7    changed=2    unreachable=0    failed=0   
+2019-08-13 02:14:27,200 p=23169 u=root |  mesos-slave1               : ok=7    changed=2    unreachable=0    failed=0   
+2019-08-13 02:14:27,200 p=23169 u=root |  mesos-slave2               : ok=7    changed=2    unreachable=0    failed=0   
+2019-08-13 02:15:32,323 p=23770 u=root |  PLAY [all] **********************************************************************************************************************************************************************************************************************************
+2019-08-13 02:15:32,343 p=23770 u=root |  TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************************
+2019-08-13 02:15:44,202 p=23770 u=root |  ok: [mesos-master1]
+2019-08-13 02:15:44,302 p=23770 u=root |  ok: [mesos-slave2]
+2019-08-13 02:15:45,243 p=23770 u=root |  ok: [mesos-slave1]
+2019-08-13 02:15:45,253 p=23770 u=root |  TASK [common : change hosts] ****************************************************************************************************************************************************************************************************************
+2019-08-13 02:15:46,954 p=23770 u=root |  ok: [mesos-master1]
+2019-08-13 02:15:46,994 p=23770 u=root |  ok: [mesos-slave1]
+2019-08-13 02:15:46,997 p=23770 u=root |  ok: [mesos-slave2]
+2019-08-13 02:15:47,021 p=23770 u=root |  TASK [common : copy mesosphere package] *****************************************************************************************************************************************************************************************************
+2019-08-13 02:15:48,253 p=23770 u=root |  ok: [mesos-slave1]
+2019-08-13 02:15:48,303 p=23770 u=root |  ok: [mesos-master1]
+2019-08-13 02:15:48,345 p=23770 u=root |  ok: [mesos-slave2]
+2019-08-13 02:15:48,369 p=23770 u=root |  TASK [common : install mesosphere package] **************************************************************************************************************************************************************************************************
+2019-08-13 02:15:50,084 p=23770 u=root |  ok: [mesos-master1]
+2019-08-13 02:15:50,100 p=23770 u=root |  ok: [mesos-slave2]
+2019-08-13 02:15:50,128 p=23770 u=root |  ok: [mesos-slave1]
+2019-08-13 02:15:50,152 p=23770 u=root |  TASK [common : disable selinux] *************************************************************************************************************************************************************************************************************
+2019-08-13 02:15:51,675 p=23770 u=root |   [WARNING]: SELinux state change will take effect next reboot
+
+2019-08-13 02:15:51,675 p=23770 u=root |  ok: [mesos-master1]
+2019-08-13 02:15:51,733 p=23770 u=root |  ok: [mesos-slave1]
+2019-08-13 02:15:51,760 p=23770 u=root |  ok: [mesos-slave2]
+2019-08-13 02:15:51,785 p=23770 u=root |  TASK [common : install java and iptables-services] ******************************************************************************************************************************************************************************************
+2019-08-13 02:15:54,983 p=23770 u=root |  ok: [mesos-slave2] => (item=[u'java', u'iptables-services'])
+2019-08-13 02:15:55,033 p=23770 u=root |  ok: [mesos-slave1] => (item=[u'java', u'iptables-services'])
+2019-08-13 02:15:55,229 p=23770 u=root |  ok: [mesos-master1] => (item=[u'java', u'iptables-services'])
+2019-08-13 02:15:55,245 p=23770 u=root |  TASK [common : stop firewalld] **************************************************************************************************************************************************************************************************************
+2019-08-13 02:15:56,349 p=23770 u=root |  changed: [mesos-slave2]
+2019-08-13 02:15:56,354 p=23770 u=root |  changed: [mesos-master1]
+2019-08-13 02:15:56,371 p=23770 u=root |  changed: [mesos-slave1]
+2019-08-13 02:15:56,385 p=23770 u=root |  PLAY [master] *******************************************************************************************************************************************************************************************************************************
+2019-08-13 02:15:56,409 p=23770 u=root |  TASK [mesos-master : test zk] ***************************************************************************************************************************************************************************************************************
+2019-08-13 02:15:57,065 p=23770 u=root |  changed: [mesos-master1]
+2019-08-13 02:15:57,069 p=23770 u=root |  PLAY RECAP **********************************************************************************************************************************************************************************************************************************
+2019-08-13 02:15:57,069 p=23770 u=root |  mesos-master1              : ok=8    changed=2    unreachable=0    failed=0   
+2019-08-13 02:15:57,070 p=23770 u=root |  mesos-slave1               : ok=7    changed=1    unreachable=0    failed=0   
+2019-08-13 02:15:57,070 p=23770 u=root |  mesos-slave2               : ok=7    changed=1    unreachable=0    failed=0   
+2019-08-13 02:36:13,047 p=24458 u=root |  PLAY [zookeeper] ****************************************************************************************************************************************************************************************************************************
+2019-08-13 02:36:13,069 p=24458 u=root |  TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************************
+2019-08-13 02:36:25,399 p=24458 u=root |  ok: [mesos-master1]
+2019-08-13 02:36:25,513 p=24458 u=root |  ok: [mesos-slave1]
+2019-08-13 02:36:25,550 p=24458 u=root |  ok: [mesos-slave2]
+2019-08-13 02:36:25,573 p=24458 u=root |  TASK [zookeeper : install ZooKeeper] ********************************************************************************************************************************************************************************************************
+2019-08-13 02:36:32,747 p=24458 u=root |  changed: [mesos-slave1]
+2019-08-13 02:36:32,975 p=24458 u=root |  changed: [mesos-slave2]
+2019-08-13 02:36:33,243 p=24458 u=root |  changed: [mesos-master1]
+2019-08-13 02:36:33,250 p=24458 u=root |  PLAY RECAP **********************************************************************************************************************************************************************************************************************************
+2019-08-13 02:36:33,250 p=24458 u=root |  mesos-master1              : ok=2    changed=1    unreachable=0    failed=0   
+2019-08-13 02:36:33,251 p=24458 u=root |  mesos-slave1               : ok=2    changed=1    unreachable=0    failed=0   
+2019-08-13 02:36:33,251 p=24458 u=root |  mesos-slave2               : ok=2    changed=1    unreachable=0    failed=0   
+2019-08-13 02:38:17,770 p=24660 u=root |  mesos-slave1 | SUCCESS | rc=0 >>
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+maxClientCnxns=50
+# The number of milliseconds of each tick
+tickTime=2000
+# The number of ticks that the initial 
+# synchronization phase can take
+initLimit=10
+# The number of ticks that can pass between 
+# sending a request and getting an acknowledgement
+syncLimit=5
+# the directory where the snapshot is stored.
+dataDir=/var/lib/zookeeper
+# the port at which the clients will connect
+clientPort=2181
+Shared connection to mesos-slave1 closed.
+
+
+2019-08-13 02:38:17,832 p=24660 u=root |  mesos-master1 | SUCCESS | rc=0 >>
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+maxClientCnxns=50
+# The number of milliseconds of each tick
+tickTime=2000
+# The number of ticks that the initial 
+# synchronization phase can take
+initLimit=10
+# The number of ticks that can pass between 
+# sending a request and getting an acknowledgement
+syncLimit=5
+# the directory where the snapshot is stored.
+dataDir=/var/lib/zookeeper
+# the port at which the clients will connect
+clientPort=2181
+Shared connection to mesos-master1 closed.
+
+
+2019-08-13 02:38:17,835 p=24660 u=root |  mesos-slave2 | SUCCESS | rc=0 >>
+# Licensed to the Apache Software Foundation (ASF) under one or more
+# contributor license agreements.  See the NOTICE file distributed with
+# this work for additional information regarding copyright ownership.
+# The ASF licenses this file to You under the Apache License, Version 2.0
+# (the "License"); you may not use this file except in compliance with
+# the License.  You may obtain a copy of the License at
+#
+#     http://www.apache.org/licenses/LICENSE-2.0
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+# See the License for the specific language governing permissions and
+# limitations under the License.
+
+maxClientCnxns=50
+# The number of milliseconds of each tick
+tickTime=2000
+# The number of ticks that the initial 
+# synchronization phase can take
+initLimit=10
+# The number of ticks that can pass between 
+# sending a request and getting an acknowledgement
+syncLimit=5
+# the directory where the snapshot is stored.
+dataDir=/var/lib/zookeeper
+# the port at which the clients will connect
+clientPort=2181
+Shared connection to mesos-slave2 closed.
+
+
+2019-08-13 02:41:14,328 p=24704 u=root |  mesos-slave1 | SUCCESS | rc=0 >>
+7f1c39f525f856d687c477cfc9ff7c6c  /etc/zookeeper/conf/zoo.cfg
+Shared connection to mesos-slave1 closed.
+
+
+2019-08-13 02:41:14,342 p=24704 u=root |  mesos-slave2 | SUCCESS | rc=0 >>
+7f1c39f525f856d687c477cfc9ff7c6c  /etc/zookeeper/conf/zoo.cfg
+Shared connection to mesos-slave2 closed.
+
+
+2019-08-13 02:41:14,367 p=24704 u=root |  mesos-master1 | SUCCESS | rc=0 >>
+7f1c39f525f856d687c477cfc9ff7c6c  /etc/zookeeper/conf/zoo.cfg
+Shared connection to mesos-master1 closed.
+
+
+2019-08-13 02:45:43,339 p=24749 u=root |  PLAY [zookeeper] ****************************************************************************************************************************************************************************************************************************
+2019-08-13 02:45:43,356 p=24749 u=root |  TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************************
+2019-08-13 02:45:55,269 p=24749 u=root |  ok: [mesos-master1]
+2019-08-13 02:45:55,327 p=24749 u=root |  ok: [mesos-slave1]
+2019-08-13 02:45:55,352 p=24749 u=root |  ok: [mesos-slave2]
+2019-08-13 02:45:55,364 p=24749 u=root |  TASK [zookeeper : install ZooKeeper] ********************************************************************************************************************************************************************************************************
+2019-08-13 02:45:56,830 p=24749 u=root |  ok: [mesos-master1]
+2019-08-13 02:45:56,895 p=24749 u=root |  ok: [mesos-slave2]
+2019-08-13 02:45:56,934 p=24749 u=root |  ok: [mesos-slave1]
+2019-08-13 02:45:56,943 p=24749 u=root |  TASK [zookeeper : copy zk config] ***********************************************************************************************************************************************************************************************************
+2019-08-13 02:45:58,777 p=24749 u=root |  changed: [mesos-master1]
+2019-08-13 02:45:58,800 p=24749 u=root |  changed: [mesos-slave1]
+2019-08-13 02:45:58,808 p=24749 u=root |  changed: [mesos-slave2]
+2019-08-13 02:45:58,833 p=24749 u=root |  TASK [zookeeper : start ZooKeeper] **********************************************************************************************************************************************************************************************************
+2019-08-13 02:45:59,963 p=24749 u=root |  changed: [mesos-master1]
+2019-08-13 02:45:59,998 p=24749 u=root |  changed: [mesos-slave2]
+2019-08-13 02:46:00,007 p=24749 u=root |  changed: [mesos-slave1]
+2019-08-13 02:46:00,012 p=24749 u=root |  PLAY RECAP **********************************************************************************************************************************************************************************************************************************
+2019-08-13 02:46:00,013 p=24749 u=root |  mesos-master1              : ok=4    changed=2    unreachable=0    failed=0   
+2019-08-13 02:46:00,014 p=24749 u=root |  mesos-slave1               : ok=4    changed=2    unreachable=0    failed=0   
+2019-08-13 02:46:00,015 p=24749 u=root |  mesos-slave2               : ok=4    changed=2    unreachable=0    failed=0   
+2019-08-13 03:07:54,284 p=26708 u=root |  PLAY [zookeeper] ****************************************************************************************************************************************************************************************************************************
+2019-08-13 03:07:54,306 p=26708 u=root |  TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************************
+2019-08-13 03:08:06,728 p=26708 u=root |  ok: [mesos-master1]
+2019-08-13 03:08:06,768 p=26708 u=root |  ok: [mesos-slave1]
+2019-08-13 03:08:06,806 p=26708 u=root |  ok: [mesos-slave2]
+2019-08-13 03:08:06,816 p=26708 u=root |  TASK [zookeeper : install ZooKeeper] ********************************************************************************************************************************************************************************************************
+2019-08-13 03:08:08,213 p=26708 u=root |  ok: [mesos-slave1]
+2019-08-13 03:08:08,236 p=26708 u=root |  ok: [mesos-slave2]
+2019-08-13 03:08:08,250 p=26708 u=root |  ok: [mesos-master1]
+2019-08-13 03:08:08,267 p=26708 u=root |  TASK [zookeeper : copy zk config] ***********************************************************************************************************************************************************************************************************
+2019-08-13 03:08:10,190 p=26708 u=root |  ok: [mesos-slave1]
+2019-08-13 03:08:10,236 p=26708 u=root |  ok: [mesos-master1]
+2019-08-13 03:08:10,254 p=26708 u=root |  ok: [mesos-slave2]
+2019-08-13 03:08:10,271 p=26708 u=root |  TASK [zookeeper : register myid] ************************************************************************************************************************************************************************************************************
+2019-08-13 03:08:11,283 p=26708 u=root |  changed: [mesos-master1]
+2019-08-13 03:08:11,301 p=26708 u=root |  changed: [mesos-slave1]
+2019-08-13 03:08:11,313 p=26708 u=root |  changed: [mesos-slave2]
+2019-08-13 03:08:11,330 p=26708 u=root |  TASK [zookeeper : display vars] *************************************************************************************************************************************************************************************************************
+2019-08-13 03:08:11,426 p=26708 u=root |  ok: [mesos-slave1] => {
+    "msg": "1"
+}
+2019-08-13 03:08:11,430 p=26708 u=root |  ok: [mesos-master1] => {
+    "msg": "1"
+}
+2019-08-13 03:08:11,446 p=26708 u=root |  ok: [mesos-slave2] => {
+    "msg": "1"
+}
+2019-08-13 03:08:11,461 p=26708 u=root |  TASK [zookeeper : start ZooKeeper] **********************************************************************************************************************************************************************************************************
+2019-08-13 03:08:12,586 p=26708 u=root |  changed: [mesos-slave1]
+2019-08-13 03:08:12,602 p=26708 u=root |  changed: [mesos-slave2]
+2019-08-13 03:08:12,615 p=26708 u=root |  changed: [mesos-master1]
+2019-08-13 03:08:12,620 p=26708 u=root |  PLAY RECAP **********************************************************************************************************************************************************************************************************************************
+2019-08-13 03:08:12,621 p=26708 u=root |  mesos-master1              : ok=6    changed=2    unreachable=0    failed=0   
+2019-08-13 03:08:12,622 p=26708 u=root |  mesos-slave1               : ok=6    changed=2    unreachable=0    failed=0   
+2019-08-13 03:08:12,623 p=26708 u=root |  mesos-slave2               : ok=6    changed=2    unreachable=0    failed=0   
+2019-08-13 03:08:57,819 p=27219 u=root |  mesos-slave2 | SUCCESS | rc=0 >>
+server.1=mesos-master1:2888:3888
+Shared connection to mesos-slave2 closed.
+
+
+2019-08-13 03:08:57,854 p=27219 u=root |  mesos-slave1 | SUCCESS | rc=0 >>
+server.1=mesos-master1:2888:3888
+Shared connection to mesos-slave1 closed.
+
+
+2019-08-13 03:08:57,888 p=27219 u=root |  mesos-master1 | SUCCESS | rc=0 >>
+server.1=mesos-master1:2888:3888
+Shared connection to mesos-master1 closed.
+
+
+2019-08-13 03:09:23,063 p=27312 u=root |  mesos-master1 | FAILED | rc=127 >>
+bash: mesos-master: command not found
+Shared connection to mesos-master1 closed.
+non-zero return code
+
+2019-08-13 03:09:23,068 p=27312 u=root |  mesos-slave1 | FAILED | rc=127 >>
+bash: mesos-master: command not found
+Shared connection to mesos-slave1 closed.
+non-zero return code
+
+2019-08-13 03:09:23,077 p=27312 u=root |  mesos-slave2 | FAILED | rc=127 >>
+bash: mesos-master: command not found
+Shared connection to mesos-slave2 closed.
+non-zero return code
+
+2019-08-13 03:09:35,177 p=27344 u=root |  mesos-slave1 | SUCCESS | rc=0 >>
+mesos-master
+Shared connection to mesos-slave1 closed.
+
+
+2019-08-13 03:09:35,180 p=27344 u=root |  mesos-slave2 | SUCCESS | rc=0 >>
+mesos-master
+Shared connection to mesos-slave2 closed.
+
+
+2019-08-13 03:09:35,196 p=27344 u=root |  mesos-master1 | SUCCESS | rc=0 >>
+mesos-master
+Shared connection to mesos-master1 closed.
+
+
+2019-08-13 03:23:16,469 p=28284 u=root |  PLAY [all] **********************************************************************************************************************************************************************************************************************************
+2019-08-13 03:23:16,496 p=28284 u=root |  TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************************
+2019-08-13 03:23:28,835 p=28284 u=root |  ok: [mesos-master1]
+2019-08-13 03:23:28,985 p=28284 u=root |  ok: [mesos-slave1]
+2019-08-13 03:23:28,996 p=28284 u=root |  ok: [mesos-slave2]
+2019-08-13 03:23:29,007 p=28284 u=root |  TASK [common : change hosts] ****************************************************************************************************************************************************************************************************************
+2019-08-13 03:23:30,786 p=28284 u=root |  ok: [mesos-master1]
+2019-08-13 03:23:30,877 p=28284 u=root |  ok: [mesos-slave2]
+2019-08-13 03:23:30,881 p=28284 u=root |  ok: [mesos-slave1]
+2019-08-13 03:23:30,906 p=28284 u=root |  TASK [common : register hostname] ***********************************************************************************************************************************************************************************************************
+2019-08-13 03:23:31,822 p=28284 u=root |  changed: [mesos-master1]
+2019-08-13 03:23:31,826 p=28284 u=root |  changed: [mesos-slave1]
+2019-08-13 03:23:31,888 p=28284 u=root |  changed: [mesos-slave2]
+2019-08-13 03:23:31,913 p=28284 u=root |  TASK [common : set hostname] ****************************************************************************************************************************************************************************************************************
+2019-08-13 03:23:32,687 p=28284 u=root |  changed: [mesos-slave1]
+2019-08-13 03:23:32,764 p=28284 u=root |  changed: [mesos-slave2]
+2019-08-13 03:23:32,791 p=28284 u=root |  changed: [mesos-master1]
+2019-08-13 03:23:32,810 p=28284 u=root |  TASK [common : display hostname] ************************************************************************************************************************************************************************************************************
+2019-08-13 03:23:32,907 p=28284 u=root |  ok: [mesos-slave2] => {
+    "msg": "mesos-slave2"
+}
+2019-08-13 03:23:32,916 p=28284 u=root |  ok: [mesos-slave1] => {
+    "msg": "mesos-slave1"
+}
+2019-08-13 03:23:32,945 p=28284 u=root |  ok: [mesos-master1] => {
+    "msg": "mesos-master1"
+}
+2019-08-13 03:23:32,968 p=28284 u=root |  TASK [common : copy mesosphere package] *****************************************************************************************************************************************************************************************************
+2019-08-13 03:23:34,206 p=28284 u=root |  ok: [mesos-slave1]
+2019-08-13 03:23:34,235 p=28284 u=root |  ok: [mesos-master1]
+2019-08-13 03:23:34,256 p=28284 u=root |  ok: [mesos-slave2]
+2019-08-13 03:23:34,270 p=28284 u=root |  TASK [common : install mesosphere package] **************************************************************************************************************************************************************************************************
+2019-08-13 03:23:35,834 p=28284 u=root |  ok: [mesos-master1]
+2019-08-13 03:23:35,893 p=28284 u=root |  ok: [mesos-slave2]
+2019-08-13 03:23:35,954 p=28284 u=root |  ok: [mesos-slave1]
+2019-08-13 03:23:35,969 p=28284 u=root |  TASK [common : disable selinux] *************************************************************************************************************************************************************************************************************
+2019-08-13 03:23:37,488 p=28284 u=root |   [WARNING]: SELinux state change will take effect next reboot
+
+2019-08-13 03:23:37,489 p=28284 u=root |  ok: [mesos-master1]
+2019-08-13 03:23:37,493 p=28284 u=root |  ok: [mesos-slave1]
+2019-08-13 03:23:37,528 p=28284 u=root |  ok: [mesos-slave2]
+2019-08-13 03:23:37,539 p=28284 u=root |  TASK [common : install java and iptables-services] ******************************************************************************************************************************************************************************************
+2019-08-13 03:24:50,200 p=28284 u=root |  changed: [mesos-slave2] => (item=[u'java', u'iptables-services', u'mesos'])
+2019-08-13 03:24:51,228 p=28284 u=root |  changed: [mesos-slave1] => (item=[u'java', u'iptables-services', u'mesos'])
+2019-08-13 03:24:51,329 p=28284 u=root |  changed: [mesos-master1] => (item=[u'java', u'iptables-services', u'mesos'])
+2019-08-13 03:24:51,352 p=28284 u=root |  TASK [common : config zk] *******************************************************************************************************************************************************************************************************************
+2019-08-13 03:24:53,066 p=28284 u=root |  changed: [mesos-master1]
+2019-08-13 03:24:53,120 p=28284 u=root |  changed: [mesos-slave1]
+2019-08-13 03:24:53,134 p=28284 u=root |  changed: [mesos-slave2]
+2019-08-13 03:24:53,164 p=28284 u=root |  TASK [common : stop firewalld] **************************************************************************************************************************************************************************************************************
+2019-08-13 03:24:53,924 p=28284 u=root |  changed: [mesos-slave1]
+2019-08-13 03:24:53,929 p=28284 u=root |  changed: [mesos-master1]
+2019-08-13 03:24:53,948 p=28284 u=root |  changed: [mesos-slave2]
+2019-08-13 03:24:53,961 p=28284 u=root |  PLAY [zookeeper] ****************************************************************************************************************************************************************************************************************************
+2019-08-13 03:24:53,985 p=28284 u=root |  TASK [zookeeper : install ZooKeeper] ********************************************************************************************************************************************************************************************************
+2019-08-13 03:24:55,305 p=28284 u=root |  ok: [mesos-master1]
+2019-08-13 03:24:55,391 p=28284 u=root |  ok: [mesos-slave1]
+2019-08-13 03:24:55,433 p=28284 u=root |  ok: [mesos-slave2]
+2019-08-13 03:24:55,443 p=28284 u=root |  TASK [zookeeper : copy zk config] ***********************************************************************************************************************************************************************************************************
+2019-08-13 03:24:57,047 p=28284 u=root |  ok: [mesos-slave2]
+2019-08-13 03:24:57,072 p=28284 u=root |  ok: [mesos-master1]
+2019-08-13 03:24:57,199 p=28284 u=root |  ok: [mesos-slave1]
+2019-08-13 03:24:57,218 p=28284 u=root |  TASK [zookeeper : register myid] ************************************************************************************************************************************************************************************************************
+2019-08-13 03:24:58,038 p=28284 u=root |  changed: [mesos-master1]
+2019-08-13 03:24:58,098 p=28284 u=root |  changed: [mesos-slave1]
+2019-08-13 03:24:58,102 p=28284 u=root |  changed: [mesos-slave2]
+2019-08-13 03:24:58,113 p=28284 u=root |  TASK [zookeeper : display vars] *************************************************************************************************************************************************************************************************************
+2019-08-13 03:24:58,177 p=28284 u=root |  ok: [mesos-master1] => {
+    "msg": "1"
+}
+2019-08-13 03:24:58,230 p=28284 u=root |  ok: [mesos-slave1] => {
+    "msg": "2"
+}
+2019-08-13 03:24:58,248 p=28284 u=root |  ok: [mesos-slave2] => {
+    "msg": "3"
+}
+2019-08-13 03:24:58,270 p=28284 u=root |  TASK [zookeeper : start ZooKeeper] **********************************************************************************************************************************************************************************************************
+2019-08-13 03:24:59,792 p=28284 u=root |  changed: [mesos-slave2]
+2019-08-13 03:24:59,806 p=28284 u=root |  changed: [mesos-slave1]
+2019-08-13 03:24:59,924 p=28284 u=root |  changed: [mesos-master1]
+2019-08-13 03:24:59,943 p=28284 u=root |  PLAY [master] *******************************************************************************************************************************************************************************************************************************
+2019-08-13 03:24:59,969 p=28284 u=root |  TASK [mesos-master : start mesos-master] ****************************************************************************************************************************************************************************************************
+2019-08-13 03:25:00,793 p=28284 u=root |  changed: [mesos-master1]
+2019-08-13 03:25:00,801 p=28284 u=root |  PLAY RECAP **********************************************************************************************************************************************************************************************************************************
+2019-08-13 03:25:00,802 p=28284 u=root |  mesos-master1              : ok=17   changed=8    unreachable=0    failed=0   
+2019-08-13 03:25:00,803 p=28284 u=root |  mesos-slave1               : ok=16   changed=7    unreachable=0    failed=0   
+2019-08-13 03:25:00,803 p=28284 u=root |  mesos-slave2               : ok=16   changed=7    unreachable=0    failed=0   
+2019-08-13 03:32:24,039 p=30422 u=root |  PLAY [zookeeper] ****************************************************************************************************************************************************************************************************************************
+2019-08-13 03:32:24,066 p=30422 u=root |  TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************************
+2019-08-13 03:32:25,863 p=30422 u=root |  ok: [mesos-slave1]
+2019-08-13 03:32:25,903 p=30422 u=root |  ok: [mesos-master1]
+2019-08-13 03:32:25,926 p=30422 u=root |  ok: [mesos-slave2]
+2019-08-13 03:32:25,936 p=30422 u=root |  TASK [zookeeper : install ZooKeeper] ********************************************************************************************************************************************************************************************************
+2019-08-13 03:32:27,773 p=30422 u=root |  ok: [mesos-slave2]
+2019-08-13 03:32:27,802 p=30422 u=root |  ok: [mesos-slave1]
+2019-08-13 03:32:27,921 p=30422 u=root |  ok: [mesos-master1]
+2019-08-13 03:32:27,941 p=30422 u=root |  TASK [zookeeper : copy zk config] ***********************************************************************************************************************************************************************************************************
+2019-08-13 03:32:29,710 p=30422 u=root |  ok: [mesos-master1]
+2019-08-13 03:32:29,736 p=30422 u=root |  ok: [mesos-slave2]
+2019-08-13 03:32:29,758 p=30422 u=root |  ok: [mesos-slave1]
+2019-08-13 03:32:29,772 p=30422 u=root |  TASK [zookeeper : register myid] ************************************************************************************************************************************************************************************************************
+2019-08-13 03:32:30,722 p=30422 u=root |  changed: [mesos-slave2]
+2019-08-13 03:32:30,741 p=30422 u=root |  changed: [mesos-master1]
+2019-08-13 03:32:30,756 p=30422 u=root |  changed: [mesos-slave1]
+2019-08-13 03:32:30,771 p=30422 u=root |  TASK [zookeeper : display myid] *************************************************************************************************************************************************************************************************************
+2019-08-13 03:32:30,856 p=30422 u=root |  ok: [mesos-master1] => {
+    "msg": "1"
+}
+2019-08-13 03:32:30,900 p=30422 u=root |  ok: [mesos-slave1] => {
+    "msg": "2"
+}
+2019-08-13 03:32:30,921 p=30422 u=root |  ok: [mesos-slave2] => {
+    "msg": "3"
+}
+2019-08-13 03:32:30,945 p=30422 u=root |  TASK [zookeeper : set myid] *****************************************************************************************************************************************************************************************************************
+2019-08-13 03:32:31,671 p=30422 u=root |  changed: [mesos-master1]
+2019-08-13 03:32:31,755 p=30422 u=root |  changed: [mesos-slave2]
+2019-08-13 03:32:31,770 p=30422 u=root |  changed: [mesos-slave1]
+2019-08-13 03:32:31,796 p=30422 u=root |  TASK [zookeeper : start ZooKeeper] **********************************************************************************************************************************************************************************************************
+2019-08-13 03:32:32,791 p=30422 u=root |  changed: [mesos-slave2]
+2019-08-13 03:32:32,804 p=30422 u=root |  changed: [mesos-master1]
+2019-08-13 03:32:32,850 p=30422 u=root |  changed: [mesos-slave1]
+2019-08-13 03:32:32,856 p=30422 u=root |  PLAY RECAP **********************************************************************************************************************************************************************************************************************************
+2019-08-13 03:32:32,856 p=30422 u=root |  mesos-master1              : ok=7    changed=3    unreachable=0    failed=0   
+2019-08-13 03:32:32,857 p=30422 u=root |  mesos-slave1               : ok=7    changed=3    unreachable=0    failed=0   
+2019-08-13 03:32:32,858 p=30422 u=root |  mesos-slave2               : ok=7    changed=3    unreachable=0    failed=0   
+2019-08-13 03:33:25,132 p=30966 u=root |  mesos-master1 | SUCCESS | rc=0 >>
+1
+Shared connection to mesos-master1 closed.
+
+
+2019-08-13 03:33:25,196 p=30966 u=root |  mesos-slave1 | SUCCESS | rc=0 >>
+2
+Shared connection to mesos-slave1 closed.
+
+
+2019-08-13 03:33:25,219 p=30966 u=root |  mesos-slave2 | SUCCESS | rc=0 >>
+3
+Shared connection to mesos-slave2 closed.
+
+
+2019-08-13 20:12:09,072 p=10537 u=root |  mesos-master1 | SUCCESS | rc=0 >>
+Loaded plugins: fastestmirror
+Resolving Dependencies
+--> Running transaction check
+---> Package java-1.8.0-openjdk.x86_64 1:1.8.0.222.b10-0.el7_6 will be erased
+--> Processing Dependency: java >= 1.6 for package: mesosphere-zookeeper-3.4.6-0.1.20141204175332.centos7.x86_64
+---> Package java-1.8.0-openjdk-headless.x86_64 1:1.8.0.222.b10-0.el7_6 will be erased
+---> Package javapackages-tools.noarch 0:3.4.1-11.el7 will be erased
+--> Running transaction check
+---> Package mesosphere-zookeeper.x86_64 0:3.4.6-0.1.20141204175332.centos7 will be erased
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package              Arch   Version                          Repository   Size
+================================================================================
+Removing:
+ java-1.8.0-openjdk   x86_64 1:1.8.0.222.b10-0.el7_6          @updates    529 k
+ java-1.8.0-openjdk-headless
+                      x86_64 1:1.8.0.222.b10-0.el7_6          @updates    104 M
+ javapackages-tools   noarch 3.4.1-11.el7                     @base       156 k
+Removing for dependencies:
+ mesosphere-zookeeper x86_64 3.4.6-0.1.20141204175332.centos7 @mesosphere 3.5 M
+
+Transaction Summary
+================================================================================
+Remove  3 Packages (+1 Dependent package)
+
+Installed size: 108 M
+Downloading packages:
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Erasing    : mesosphere-zookeeper-3.4.6-0.1.20141204175332.centos7.x86_   1/4 
+warning: /etc/zookeeper/conf/zoo.cfg saved as /etc/zookeeper/conf/zoo.cfg.rpmsave
+  Erasing    : 1:java-1.8.0-openjdk-1.8.0.222.b10-0.el7_6.x86_64            2/4 
+  Erasing    : 1:java-1.8.0-openjdk-headless-1.8.0.222.b10-0.el7_6.x86_64   3/4 
+  Erasing    : javapackages-tools-3.4.1-11.el7.noarch                       4/4 
+  Verifying  : 1:java-1.8.0-openjdk-headless-1.8.0.222.b10-0.el7_6.x86_64   1/4 
+  Verifying  : 1:java-1.8.0-openjdk-1.8.0.222.b10-0.el7_6.x86_64            2/4 
+  Verifying  : mesosphere-zookeeper-3.4.6-0.1.20141204175332.centos7.x86_   3/4 
+  Verifying  : javapackages-tools-3.4.1-11.el7.noarch                       4/4 
+
+Removed:
+  java-1.8.0-openjdk.x86_64 1:1.8.0.222.b10-0.el7_6                             
+  java-1.8.0-openjdk-headless.x86_64 1:1.8.0.222.b10-0.el7_6                    
+  javapackages-tools.noarch 0:3.4.1-11.el7                                      
+
+Dependency Removed:
+  mesosphere-zookeeper.x86_64 0:3.4.6-0.1.20141204175332.centos7                
+
+Complete!
+Shared connection to mesos-master1 closed.
+
+
+2019-08-13 20:12:10,221 p=10537 u=root |  mesos-slave2 | SUCCESS | rc=0 >>
+Loaded plugins: fastestmirror
+Resolving Dependencies
+--> Running transaction check
+---> Package java-1.8.0-openjdk.x86_64 1:1.8.0.222.b10-0.el7_6 will be erased
+--> Processing Dependency: java >= 1.6 for package: mesosphere-zookeeper-3.4.6-0.1.20141204175332.centos7.x86_64
+---> Package java-1.8.0-openjdk-headless.x86_64 1:1.8.0.222.b10-0.el7_6 will be erased
+---> Package javapackages-tools.noarch 0:3.4.1-11.el7 will be erased
+--> Running transaction check
+---> Package mesosphere-zookeeper.x86_64 0:3.4.6-0.1.20141204175332.centos7 will be erased
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package              Arch   Version                          Repository   Size
+================================================================================
+Removing:
+ java-1.8.0-openjdk   x86_64 1:1.8.0.222.b10-0.el7_6          @updates    529 k
+ java-1.8.0-openjdk-headless
+                      x86_64 1:1.8.0.222.b10-0.el7_6          @updates    104 M
+ javapackages-tools   noarch 3.4.1-11.el7                     @base       156 k
+Removing for dependencies:
+ mesosphere-zookeeper x86_64 3.4.6-0.1.20141204175332.centos7 @mesosphere 3.5 M
+
+Transaction Summary
+================================================================================
+Remove  3 Packages (+1 Dependent package)
+
+Installed size: 108 M
+Downloading packages:
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Erasing    : mesosphere-zookeeper-3.4.6-0.1.20141204175332.centos7.x86_   1/4 
+warning: /etc/zookeeper/conf/zoo.cfg saved as /etc/zookeeper/conf/zoo.cfg.rpmsave
+  Erasing    : 1:java-1.8.0-openjdk-1.8.0.222.b10-0.el7_6.x86_64            2/4 
+  Erasing    : 1:java-1.8.0-openjdk-headless-1.8.0.222.b10-0.el7_6.x86_64   3/4 
+  Erasing    : javapackages-tools-3.4.1-11.el7.noarch                       4/4 
+  Verifying  : 1:java-1.8.0-openjdk-headless-1.8.0.222.b10-0.el7_6.x86_64   1/4 
+  Verifying  : 1:java-1.8.0-openjdk-1.8.0.222.b10-0.el7_6.x86_64            2/4 
+  Verifying  : mesosphere-zookeeper-3.4.6-0.1.20141204175332.centos7.x86_   3/4 
+  Verifying  : javapackages-tools-3.4.1-11.el7.noarch                       4/4 
+
+Removed:
+  java-1.8.0-openjdk.x86_64 1:1.8.0.222.b10-0.el7_6                             
+  java-1.8.0-openjdk-headless.x86_64 1:1.8.0.222.b10-0.el7_6                    
+  javapackages-tools.noarch 0:3.4.1-11.el7                                      
+
+Dependency Removed:
+  mesosphere-zookeeper.x86_64 0:3.4.6-0.1.20141204175332.centos7                
+
+Complete!
+Shared connection to mesos-slave2 closed.
+
+
+2019-08-13 20:12:10,370 p=10537 u=root |  mesos-slave1 | SUCCESS | rc=0 >>
+Loaded plugins: fastestmirror
+Resolving Dependencies
+--> Running transaction check
+---> Package java-1.8.0-openjdk.x86_64 1:1.8.0.222.b10-0.el7_6 will be erased
+--> Processing Dependency: java >= 1.6 for package: mesosphere-zookeeper-3.4.6-0.1.20141204175332.centos7.x86_64
+---> Package java-1.8.0-openjdk-headless.x86_64 1:1.8.0.222.b10-0.el7_6 will be erased
+---> Package javapackages-tools.noarch 0:3.4.1-11.el7 will be erased
+--> Running transaction check
+---> Package mesosphere-zookeeper.x86_64 0:3.4.6-0.1.20141204175332.centos7 will be erased
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package              Arch   Version                          Repository   Size
+================================================================================
+Removing:
+ java-1.8.0-openjdk   x86_64 1:1.8.0.222.b10-0.el7_6          @updates    529 k
+ java-1.8.0-openjdk-headless
+                      x86_64 1:1.8.0.222.b10-0.el7_6          @updates    104 M
+ javapackages-tools   noarch 3.4.1-11.el7                     @base       156 k
+Removing for dependencies:
+ mesosphere-zookeeper x86_64 3.4.6-0.1.20141204175332.centos7 @mesosphere 3.5 M
+
+Transaction Summary
+================================================================================
+Remove  3 Packages (+1 Dependent package)
+
+Installed size: 108 M
+Downloading packages:
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Erasing    : mesosphere-zookeeper-3.4.6-0.1.20141204175332.centos7.x86_   1/4 
+warning: /etc/zookeeper/conf/zoo.cfg saved as /etc/zookeeper/conf/zoo.cfg.rpmsave
+  Erasing    : 1:java-1.8.0-openjdk-1.8.0.222.b10-0.el7_6.x86_64            2/4 
+  Erasing    : 1:java-1.8.0-openjdk-headless-1.8.0.222.b10-0.el7_6.x86_64   3/4 
+  Erasing    : javapackages-tools-3.4.1-11.el7.noarch                       4/4 
+  Verifying  : 1:java-1.8.0-openjdk-headless-1.8.0.222.b10-0.el7_6.x86_64   1/4 
+  Verifying  : 1:java-1.8.0-openjdk-1.8.0.222.b10-0.el7_6.x86_64            2/4 
+  Verifying  : mesosphere-zookeeper-3.4.6-0.1.20141204175332.centos7.x86_   3/4 
+  Verifying  : javapackages-tools-3.4.1-11.el7.noarch                       4/4 
+
+Removed:
+  java-1.8.0-openjdk.x86_64 1:1.8.0.222.b10-0.el7_6                             
+  java-1.8.0-openjdk-headless.x86_64 1:1.8.0.222.b10-0.el7_6                    
+  javapackages-tools.noarch 0:3.4.1-11.el7                                      
+
+Dependency Removed:
+  mesosphere-zookeeper.x86_64 0:3.4.6-0.1.20141204175332.centos7                
+
+Complete!
+Shared connection to mesos-slave1 closed.
+
+
+2019-08-13 20:12:34,043 p=10589 u=root |  mesos-slave2 | SUCCESS | rc=0 >>
+tzdata-java-2019b-1.el7.noarch
+python-javapackages-3.4.1-11.el7.noarch
+Shared connection to mesos-slave2 closed.
+
+
+2019-08-13 20:12:34,076 p=10589 u=root |  mesos-slave1 | SUCCESS | rc=0 >>
+tzdata-java-2019b-1.el7.noarch
+python-javapackages-3.4.1-11.el7.noarch
+Shared connection to mesos-slave1 closed.
+
+
+2019-08-13 20:12:34,143 p=10589 u=root |  mesos-master1 | SUCCESS | rc=0 >>
+python-javapackages-3.4.1-11.el7.noarch
+tzdata-java-2019b-1.el7.noarch
+Shared connection to mesos-master1 closed.
+
+
+2019-08-13 20:42:39,292 p=10903 u=root |  mesos-master1 | SUCCESS | rc=0 >>
+Shared connection to mesos-master1 closed.
+
+
+2019-08-13 20:42:39,338 p=10903 u=root |  mesos-slave1 | SUCCESS | rc=0 >>
+Shared connection to mesos-slave1 closed.
+
+
+2019-08-13 20:42:39,374 p=10903 u=root |  mesos-slave2 | SUCCESS | rc=0 >>
+Shared connection to mesos-slave2 closed.
+
+
+2019-08-13 22:10:46,777 p=12839 u=root |  PLAY [all] **********************************************************************************************************************************************************************************************************************************
+2019-08-13 22:10:46,797 p=12839 u=root |  TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************************
+2019-08-13 22:10:49,453 p=12839 u=root |  ok: [mesos-slave1]
+2019-08-13 22:10:49,473 p=12839 u=root |  ok: [mesos-master1]
+2019-08-13 22:10:49,579 p=12839 u=root |  ok: [mesos-slave2]
+2019-08-13 22:10:49,609 p=12839 u=root |  TASK [common : change hosts] ****************************************************************************************************************************************************************************************************************
+2019-08-13 22:10:51,307 p=12839 u=root |  ok: [mesos-slave1]
+2019-08-13 22:10:51,333 p=12839 u=root |  ok: [mesos-master1]
+2019-08-13 22:10:51,360 p=12839 u=root |  ok: [mesos-slave2]
+2019-08-13 22:10:51,384 p=12839 u=root |  TASK [common : register hostname] ***********************************************************************************************************************************************************************************************************
+2019-08-13 22:10:52,300 p=12839 u=root |  changed: [mesos-slave2]
+2019-08-13 22:10:52,309 p=12839 u=root |  changed: [mesos-slave1]
+2019-08-13 22:10:52,371 p=12839 u=root |  changed: [mesos-master1]
+2019-08-13 22:10:52,384 p=12839 u=root |  TASK [common : set hostname] ****************************************************************************************************************************************************************************************************************
+2019-08-13 22:10:53,163 p=12839 u=root |  changed: [mesos-slave2]
+2019-08-13 22:10:53,217 p=12839 u=root |  changed: [mesos-master1]
+2019-08-13 22:10:53,232 p=12839 u=root |  changed: [mesos-slave1]
+2019-08-13 22:10:53,250 p=12839 u=root |  TASK [common : display hostname] ************************************************************************************************************************************************************************************************************
+2019-08-13 22:10:53,322 p=12839 u=root |  ok: [mesos-slave1] => {
+    "msg": "mesos-slave1"
+}
+2019-08-13 22:10:53,339 p=12839 u=root |  ok: [mesos-slave2] => {
+    "msg": "mesos-slave2"
+}
+2019-08-13 22:10:53,373 p=12839 u=root |  ok: [mesos-master1] => {
+    "msg": "mesos-master1"
+}
+2019-08-13 22:10:53,393 p=12839 u=root |  TASK [common : copy mesosphere package] *****************************************************************************************************************************************************************************************************
+2019-08-13 22:10:53,460 p=12839 u=root |   [ERROR]: User interrupted execution
+
+2019-08-13 22:12:25,697 p=13257 u=root |  PLAY [all] **********************************************************************************************************************************************************************************************************************************
+2019-08-13 22:12:25,719 p=13257 u=root |  TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************************
+2019-08-13 22:12:27,485 p=13257 u=root |  ok: [mesos-master1]
+2019-08-13 22:12:27,504 p=13257 u=root |  ok: [mesos-slave2]
+2019-08-13 22:12:27,562 p=13257 u=root |  ok: [mesos-slave1]
+2019-08-13 22:12:27,579 p=13257 u=root |  TASK [common : change hosts] ****************************************************************************************************************************************************************************************************************
+2019-08-13 22:12:29,317 p=13257 u=root |  ok: [mesos-slave1]
+2019-08-13 22:12:29,329 p=13257 u=root |  ok: [mesos-master1]
+2019-08-13 22:12:29,352 p=13257 u=root |  ok: [mesos-slave2]
+2019-08-13 22:12:29,369 p=13257 u=root |  TASK [common : register hostname] ***********************************************************************************************************************************************************************************************************
+2019-08-13 22:12:30,277 p=13257 u=root |  changed: [mesos-master1]
+2019-08-13 22:12:30,331 p=13257 u=root |  changed: [mesos-slave1]
+2019-08-13 22:12:30,393 p=13257 u=root |  changed: [mesos-slave2]
+2019-08-13 22:12:30,414 p=13257 u=root |  TASK [common : set hostname] ****************************************************************************************************************************************************************************************************************
+2019-08-13 22:12:31,175 p=13257 u=root |  changed: [mesos-slave2]
+2019-08-13 22:12:31,185 p=13257 u=root |  changed: [mesos-slave1]
+2019-08-13 22:12:31,275 p=13257 u=root |  changed: [mesos-master1]
+2019-08-13 22:12:31,291 p=13257 u=root |  TASK [common : display hostname] ************************************************************************************************************************************************************************************************************
+2019-08-13 22:12:31,372 p=13257 u=root |  ok: [mesos-slave1] => {
+    "msg": "mesos-slave1"
+}
+2019-08-13 22:12:31,380 p=13257 u=root |  ok: [mesos-slave2] => {
+    "msg": "mesos-slave2"
+}
+2019-08-13 22:12:31,414 p=13257 u=root |  ok: [mesos-master1] => {
+    "msg": "mesos-master1"
+}
+2019-08-13 22:12:31,426 p=13257 u=root |  TASK [common : copy mesosphere package] *****************************************************************************************************************************************************************************************************
+2019-08-13 22:12:32,611 p=13257 u=root |  ok: [mesos-slave2]
+2019-08-13 22:12:32,617 p=13257 u=root |  ok: [mesos-master1]
+2019-08-13 22:12:32,629 p=13257 u=root |  ok: [mesos-slave1]
+2019-08-13 22:12:32,642 p=13257 u=root |  TASK [common : install mesosphere package] **************************************************************************************************************************************************************************************************
+2019-08-13 22:12:34,277 p=13257 u=root |  ok: [mesos-master1]
+2019-08-13 22:12:34,311 p=13257 u=root |  ok: [mesos-slave1]
+2019-08-13 22:12:34,487 p=13257 u=root |  ok: [mesos-slave2]
+2019-08-13 22:12:34,510 p=13257 u=root |  TASK [common : disable selinux] *************************************************************************************************************************************************************************************************************
+2019-08-13 22:12:36,121 p=13257 u=root |  ok: [mesos-master1]
+2019-08-13 22:12:36,176 p=13257 u=root |  ok: [mesos-slave1]
+2019-08-13 22:12:36,189 p=13257 u=root |  ok: [mesos-slave2]
+2019-08-13 22:12:36,213 p=13257 u=root |  TASK [common : create jdk path] *************************************************************************************************************************************************************************************************************
+2019-08-13 22:12:36,941 p=13257 u=root |  changed: [mesos-slave1]
+2019-08-13 22:12:36,957 p=13257 u=root |  ok: [mesos-master1]
+2019-08-13 22:12:36,978 p=13257 u=root |  changed: [mesos-slave2]
+2019-08-13 22:12:36,991 p=13257 u=root |  TASK [common : copy jdk file] ***************************************************************************************************************************************************************************************************************
+2019-08-13 22:12:41,623 p=13257 u=root |  ok: [mesos-master1]
+2019-08-13 22:13:08,174 p=13257 u=root |  changed: [mesos-slave1]
+2019-08-13 22:13:10,500 p=13257 u=root |  changed: [mesos-slave2]
+2019-08-13 22:13:10,517 p=13257 u=root |  TASK [common : Unarchive jdk] ***************************************************************************************************************************************************************************************************************
+2019-08-13 22:14:07,603 p=13257 u=root |  ok: [mesos-master1]
+2019-08-13 22:14:26,097 p=13257 u=root |  changed: [mesos-slave1]
+2019-08-13 22:14:26,297 p=13257 u=root |  changed: [mesos-slave2]
+2019-08-13 22:14:26,322 p=13257 u=root |  TASK [common : copy jdk env .bash_profile] **************************************************************************************************************************************************************************************************
+2019-08-13 22:14:28,182 p=13257 u=root |  changed: [mesos-master1]
+2019-08-13 22:14:28,247 p=13257 u=root |  changed: [mesos-slave1]
+2019-08-13 22:14:28,251 p=13257 u=root |  changed: [mesos-slave2]
+2019-08-13 22:14:28,277 p=13257 u=root |  TASK [common : enable jdk env] **************************************************************************************************************************************************************************************************************
+2019-08-13 22:14:29,010 p=13257 u=root |  changed: [mesos-slave1]
+2019-08-13 22:14:29,074 p=13257 u=root |  changed: [mesos-master1]
+2019-08-13 22:14:29,095 p=13257 u=root |  changed: [mesos-slave2]
+2019-08-13 22:14:29,119 p=13257 u=root |  TASK [common : update env] ******************************************************************************************************************************************************************************************************************
+2019-08-13 22:14:29,863 p=13257 u=root |  changed: [mesos-slave1]
+2019-08-13 22:14:29,902 p=13257 u=root |  changed: [mesos-master1]
+2019-08-13 22:14:29,911 p=13257 u=root |  changed: [mesos-slave2]
+2019-08-13 22:14:29,935 p=13257 u=root |  TASK [common : install mesos and iptables-services] *****************************************************************************************************************************************************************************************
+2019-08-13 22:14:31,089 p=13257 u=root |  ok: [mesos-slave1] => (item=[u'iptables-services', u'mesos'])
+2019-08-13 22:14:31,205 p=13257 u=root |  ok: [mesos-slave2] => (item=[u'iptables-services', u'mesos'])
+2019-08-13 22:14:31,240 p=13257 u=root |  ok: [mesos-master1] => (item=[u'iptables-services', u'mesos'])
+2019-08-13 22:14:31,262 p=13257 u=root |  TASK [common : config zk] *******************************************************************************************************************************************************************************************************************
+2019-08-13 22:14:32,458 p=13257 u=root |  ok: [mesos-slave1]
+2019-08-13 22:14:32,589 p=13257 u=root |  ok: [mesos-slave2]
+2019-08-13 22:14:32,602 p=13257 u=root |  ok: [mesos-master1]
+2019-08-13 22:14:32,622 p=13257 u=root |  TASK [common : stop firewalld] **************************************************************************************************************************************************************************************************************
+2019-08-13 22:14:34,360 p=13257 u=root |  changed: [mesos-slave2]
+2019-08-13 22:14:34,367 p=13257 u=root |  changed: [mesos-slave1]
+2019-08-13 22:14:34,544 p=13257 u=root |  changed: [mesos-master1]
+2019-08-13 22:14:34,558 p=13257 u=root |  PLAY [zookeeper] ****************************************************************************************************************************************************************************************************************************
+2019-08-13 22:14:34,593 p=13257 u=root |  TASK [zookeeper : copy zk package] **********************************************************************************************************************************************************************************************************
+2019-08-13 22:14:34,661 p=13257 u=root |  An exception occurred during task execution. To see the full traceback, use -vvv. The error was: 	/root/mmcd/zookeeper-3.4.14.tar.gz
+2019-08-13 22:14:34,662 p=13257 u=root |  fatal: [mesos-master1]: FAILED! => {"changed": false, "msg": "Could not find or access 'zookeeper-3.4.14.tar.gz'\nSearched in:\n\t/root/mmcd/roles/zookeeper/files/zookeeper-3.4.14.tar.gz\n\t/root/mmcd/roles/zookeeper/zookeeper-3.4.14.tar.gz\n\t/root/mmcd/roles/zookeeper/tasks/files/zookeeper-3.4.14.tar.gz\n\t/root/mmcd/roles/zookeeper/tasks/zookeeper-3.4.14.tar.gz\n\t/root/mmcd/files/zookeeper-3.4.14.tar.gz\n\t/root/mmcd/zookeeper-3.4.14.tar.gz"}
+2019-08-13 22:14:34,682 p=13257 u=root |  An exception occurred during task execution. To see the full traceback, use -vvv. The error was: 	/root/mmcd/zookeeper-3.4.14.tar.gz
+2019-08-13 22:14:34,683 p=13257 u=root |  fatal: [mesos-slave1]: FAILED! => {"changed": false, "msg": "Could not find or access 'zookeeper-3.4.14.tar.gz'\nSearched in:\n\t/root/mmcd/roles/zookeeper/files/zookeeper-3.4.14.tar.gz\n\t/root/mmcd/roles/zookeeper/zookeeper-3.4.14.tar.gz\n\t/root/mmcd/roles/zookeeper/tasks/files/zookeeper-3.4.14.tar.gz\n\t/root/mmcd/roles/zookeeper/tasks/zookeeper-3.4.14.tar.gz\n\t/root/mmcd/files/zookeeper-3.4.14.tar.gz\n\t/root/mmcd/zookeeper-3.4.14.tar.gz"}
+2019-08-13 22:14:34,713 p=13257 u=root |  An exception occurred during task execution. To see the full traceback, use -vvv. The error was: 	/root/mmcd/zookeeper-3.4.14.tar.gz
+2019-08-13 22:14:34,713 p=13257 u=root |  fatal: [mesos-slave2]: FAILED! => {"changed": false, "msg": "Could not find or access 'zookeeper-3.4.14.tar.gz'\nSearched in:\n\t/root/mmcd/roles/zookeeper/files/zookeeper-3.4.14.tar.gz\n\t/root/mmcd/roles/zookeeper/zookeeper-3.4.14.tar.gz\n\t/root/mmcd/roles/zookeeper/tasks/files/zookeeper-3.4.14.tar.gz\n\t/root/mmcd/roles/zookeeper/tasks/zookeeper-3.4.14.tar.gz\n\t/root/mmcd/files/zookeeper-3.4.14.tar.gz\n\t/root/mmcd/zookeeper-3.4.14.tar.gz"}
+2019-08-13 22:14:34,715 p=13257 u=root |  	to retry, use: --limit @/root/mmcd/main.retry
+
+2019-08-13 22:14:34,715 p=13257 u=root |  PLAY RECAP **********************************************************************************************************************************************************************************************************************************
+2019-08-13 22:14:34,715 p=13257 u=root |  mesos-master1              : ok=17   changed=6    unreachable=0    failed=1   
+2019-08-13 22:14:34,715 p=13257 u=root |  mesos-slave1               : ok=17   changed=9    unreachable=0    failed=1   
+2019-08-13 22:14:34,716 p=13257 u=root |  mesos-slave2               : ok=17   changed=9    unreachable=0    failed=1   
+2019-08-13 22:17:32,658 p=14903 u=root |  PLAY [zookeeper] ****************************************************************************************************************************************************************************************************************************
+2019-08-13 22:17:32,687 p=14903 u=root |  TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************************
+2019-08-13 22:17:34,479 p=14903 u=root |  ok: [mesos-master1]
+2019-08-13 22:17:34,524 p=14903 u=root |  ok: [mesos-slave1]
+2019-08-13 22:17:34,542 p=14903 u=root |  ok: [mesos-slave2]
+2019-08-13 22:17:34,565 p=14903 u=root |  TASK [zookeeper : copy zk package] **********************************************************************************************************************************************************************************************************
+2019-08-13 22:17:45,207 p=14903 u=root |  changed: [mesos-slave1]
+2019-08-13 22:17:45,211 p=14903 u=root |  changed: [mesos-master1]
+2019-08-13 22:17:45,426 p=14903 u=root |  changed: [mesos-slave2]
+2019-08-13 22:17:45,451 p=14903 u=root |  TASK [zookeeper : unarchive zk package] *****************************************************************************************************************************************************************************************************
+2019-08-13 22:17:58,938 p=14903 u=root |  changed: [mesos-master1]
+2019-08-13 22:17:59,214 p=14903 u=root |  changed: [mesos-slave1]
+2019-08-13 22:17:59,700 p=14903 u=root |  changed: [mesos-slave2]
+2019-08-13 22:17:59,730 p=14903 u=root |  TASK [zookeeper : rename zk path] ***********************************************************************************************************************************************************************************************************
+2019-08-13 22:18:00,737 p=14903 u=root |  changed: [mesos-slave1]
+2019-08-13 22:18:00,749 p=14903 u=root |  changed: [mesos-master1]
+2019-08-13 22:18:00,793 p=14903 u=root |  changed: [mesos-slave2]
+2019-08-13 22:18:00,815 p=14903 u=root |  TASK [zookeeper : create zk dataDir] ********************************************************************************************************************************************************************************************************
+2019-08-13 22:18:01,842 p=14903 u=root |  changed: [mesos-slave2]
+2019-08-13 22:18:01,891 p=14903 u=root |  changed: [mesos-master1]
+2019-08-13 22:18:01,895 p=14903 u=root |  changed: [mesos-slave1]
+2019-08-13 22:18:01,921 p=14903 u=root |  TASK [zookeeper : copy zk config] ***********************************************************************************************************************************************************************************************************
+2019-08-13 22:18:03,810 p=14903 u=root |  changed: [mesos-master1]
+2019-08-13 22:18:03,860 p=14903 u=root |  changed: [mesos-slave2]
+2019-08-13 22:18:03,896 p=14903 u=root |  changed: [mesos-slave1]
+2019-08-13 22:18:03,913 p=14903 u=root |  TASK [zookeeper : register myid] ************************************************************************************************************************************************************************************************************
+2019-08-13 22:18:04,622 p=14903 u=root |  changed: [mesos-master1]
+2019-08-13 22:18:04,656 p=14903 u=root |  changed: [mesos-slave1]
+2019-08-13 22:18:04,713 p=14903 u=root |  changed: [mesos-slave2]
+2019-08-13 22:18:04,740 p=14903 u=root |  TASK [zookeeper : set myid] *****************************************************************************************************************************************************************************************************************
+2019-08-13 22:18:05,466 p=14903 u=root |  changed: [mesos-master1]
+2019-08-13 22:18:05,510 p=14903 u=root |  changed: [mesos-slave2]
+2019-08-13 22:18:05,533 p=14903 u=root |  changed: [mesos-slave1]
+2019-08-13 22:18:05,547 p=14903 u=root |  TASK [zookeeper : copy service] *************************************************************************************************************************************************************************************************************
+2019-08-13 22:18:07,431 p=14903 u=root |  changed: [mesos-master1]
+2019-08-13 22:18:07,486 p=14903 u=root |  changed: [mesos-slave2]
+2019-08-13 22:18:07,534 p=14903 u=root |  changed: [mesos-slave1]
+2019-08-13 22:18:07,558 p=14903 u=root |  TASK [zookeeper : Enabling zookeeper.service] ***********************************************************************************************************************************************************************************************
+2019-08-13 22:18:08,321 p=14903 u=root |  changed: [mesos-master1]
+2019-08-13 22:18:08,376 p=14903 u=root |  changed: [mesos-slave2]
+2019-08-13 22:18:08,408 p=14903 u=root |  changed: [mesos-slave1]
+2019-08-13 22:18:08,425 p=14903 u=root |  TASK [zookeeper : start ZooKeeper] **********************************************************************************************************************************************************************************************************
+2019-08-13 22:18:10,728 p=14903 u=root |  changed: [mesos-master1]
+2019-08-13 22:18:11,124 p=14903 u=root |  changed: [mesos-slave1]
+2019-08-13 22:18:11,134 p=14903 u=root |  changed: [mesos-slave2]
+2019-08-13 22:18:11,139 p=14903 u=root |  PLAY RECAP **********************************************************************************************************************************************************************************************************************************
+2019-08-13 22:18:11,140 p=14903 u=root |  mesos-master1              : ok=11   changed=10   unreachable=0    failed=0   
+2019-08-13 22:18:11,140 p=14903 u=root |  mesos-slave1               : ok=11   changed=10   unreachable=0    failed=0   
+2019-08-13 22:18:11,141 p=14903 u=root |  mesos-slave2               : ok=11   changed=10   unreachable=0    failed=0   
+2019-08-13 22:19:26,655 p=16174 u=root |  mesos-master1 | FAILED | rc=1 >>
+Unknown operation 'disabled'.
+Shared connection to mesos-master1 closed.
+non-zero return code
+
+2019-08-13 22:19:26,689 p=16174 u=root |  mesos-slave1 | FAILED | rc=1 >>
+Unknown operation 'disabled'.
+Shared connection to mesos-slave1 closed.
+non-zero return code
+
+2019-08-13 22:19:26,720 p=16174 u=root |  mesos-slave2 | FAILED | rc=1 >>
+Unknown operation 'disabled'.
+Shared connection to mesos-slave2 closed.
+non-zero return code
+
+2019-08-13 22:19:32,989 p=16217 u=root |  mesos-slave2 | SUCCESS | rc=0 >>
+Removed symlink /etc/systemd/system/multi-user.target.wants/zookeeper.service.
+Shared connection to mesos-slave2 closed.
+
+
+2019-08-13 22:19:32,996 p=16217 u=root |  mesos-slave1 | SUCCESS | rc=0 >>
+Removed symlink /etc/systemd/system/multi-user.target.wants/zookeeper.service.
+Shared connection to mesos-slave1 closed.
+
+
+2019-08-13 22:19:32,998 p=16217 u=root |  mesos-master1 | SUCCESS | rc=0 >>
+Removed symlink /etc/systemd/system/multi-user.target.wants/zookeeper.service.
+Shared connection to mesos-master1 closed.
+
+
+2019-08-13 22:19:55,057 p=16266 u=root |  mesos-master1 | SUCCESS | rc=0 >>
+ZooKeeper JMX enabled by default
+Using config: /usr/local/zookeeper/bin/../conf/zoo.cfg
+Starting zookeeper ... STARTED
+Shared connection to mesos-master1 closed.
+
+
+2019-08-13 22:19:55,073 p=16266 u=root |  mesos-slave1 | SUCCESS | rc=0 >>
+ZooKeeper JMX enabled by default
+Using config: /usr/local/zookeeper/bin/../conf/zoo.cfg
+Starting zookeeper ... STARTED
+Shared connection to mesos-slave1 closed.
+
+
+2019-08-13 22:19:55,092 p=16266 u=root |  mesos-slave2 | SUCCESS | rc=0 >>
+ZooKeeper JMX enabled by default
+Using config: /usr/local/zookeeper/bin/../conf/zoo.cfg
+Starting zookeeper ... STARTED
+Shared connection to mesos-slave2 closed.
+
+
+2019-08-13 22:20:42,595 p=16409 u=root |  mesos-slave1 | SUCCESS | rc=0 >>
+ZooKeeper JMX enabled by default
+Using config: /usr/local/zookeeper/conf/zoo.cfg
+Starting zookeeper ... STARTED
+Shared connection to mesos-slave1 closed.
+
+
+2019-08-13 22:20:42,609 p=16409 u=root |  mesos-master1 | SUCCESS | rc=0 >>
+ZooKeeper JMX enabled by default
+Using config: /usr/local/zookeeper/conf/zoo.cfg
+Starting zookeeper ... STARTED
+Shared connection to mesos-master1 closed.
+
+
+2019-08-13 22:20:42,609 p=16409 u=root |  mesos-slave2 | SUCCESS | rc=0 >>
+ZooKeeper JMX enabled by default
+Using config: /usr/local/zookeeper/conf/zoo.cfg
+Starting zookeeper ... STARTED
+Shared connection to mesos-slave2 closed.
+
+
+2019-08-13 22:20:51,349 p=16453 u=root |  mesos-slave1 | FAILED | rc=127 >>
+bash: jps: command not found
+Shared connection to mesos-slave1 closed.
+non-zero return code
+
+2019-08-13 22:20:51,357 p=16453 u=root |  mesos-master1 | FAILED | rc=127 >>
+bash: jps: command not found
+Shared connection to mesos-master1 closed.
+non-zero return code
+
+2019-08-13 22:20:51,361 p=16453 u=root |  mesos-slave2 | FAILED | rc=127 >>
+bash: jps: command not found
+Shared connection to mesos-slave2 closed.
+non-zero return code
+
+2019-08-13 22:21:00,251 p=16485 u=root |  mesos-slave1 | SUCCESS | rc=0 >>
+root     11423 11334  0 22:20 pts/0    00:00:00 bash -c ps -ef|grep javas
+root     11433 11423  0 22:20 pts/0    00:00:00 grep javas
+Shared connection to mesos-slave1 closed.
+
+
+2019-08-13 22:21:00,278 p=16485 u=root |  mesos-slave2 | SUCCESS | rc=0 >>
+root     11390 11302  0 22:21 pts/0    00:00:00 bash -c ps -ef|grep javas
+root     11400 11390  0 22:21 pts/0    00:00:00 grep javas
+Shared connection to mesos-slave2 closed.
+
+
+2019-08-13 22:21:00,326 p=16485 u=root |  mesos-master1 | SUCCESS | rc=0 >>
+root     16485  9054 88 22:20 pts/1    00:00:01 /usr/bin/python2 /usr/bin/ansible all -m raw -a ps -ef|grep javas
+root     16497 16485  0 22:20 pts/1    00:00:00 /usr/bin/python2 /usr/bin/ansible all -m raw -a ps -ef|grep javas
+root     16501 16497  0 22:20 pts/1    00:00:00 ssh -C -o ControlMaster=auto -o ControlPersist=600s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=30 -o ControlPath=/root/.ansible/cp/a8c6060f5e -tt mesos-master1 ps -ef|grep javas
+root     16502 16189  0 22:20 pts/7    00:00:00 bash -c ps -ef|grep javas
+root     16516 16502  0 22:20 pts/7    00:00:00 grep javas
+Shared connection to mesos-master1 closed.
+
+
+2019-08-13 22:21:04,397 p=16519 u=root |  mesos-slave1 | SUCCESS | rc=0 >>
+root     11434 11334  1 22:21 pts/0    00:00:00 bash -c ps -ef|grep java
+root     11444 11434  0 22:21 pts/0    00:00:00 grep java
+Shared connection to mesos-slave1 closed.
+
+
+2019-08-13 22:21:04,407 p=16519 u=root |  mesos-slave2 | SUCCESS | rc=0 >>
+root     11401 11302  0 22:21 pts/0    00:00:00 bash -c ps -ef|grep java
+root     11411 11401  0 22:21 pts/0    00:00:00 grep java
+Shared connection to mesos-slave2 closed.
+
+
+2019-08-13 22:21:04,434 p=16519 u=root |  mesos-master1 | SUCCESS | rc=0 >>
+root     16519  9054 99 22:21 pts/1    00:00:02 /usr/bin/python2 /usr/bin/ansible all -m raw -a ps -ef|grep java
+root     16531 16519  0 22:21 pts/1    00:00:00 /usr/bin/python2 /usr/bin/ansible all -m raw -a ps -ef|grep java
+root     16535 16531  0 22:21 pts/1    00:00:00 ssh -C -o ControlMaster=auto -o ControlPersist=600s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=30 -o ControlPath=/root/.ansible/cp/a8c6060f5e -tt mesos-master1 ps -ef|grep java
+root     16536 16189  0 22:21 pts/7    00:00:00 bash -c ps -ef|grep java
+root     16549 16536  0 22:21 pts/7    00:00:00 grep java
+Shared connection to mesos-master1 closed.
+
+
+2019-08-13 22:26:51,031 p=16734 u=root |  mesos-master1 | SUCCESS => {
+    "changed": true, 
+    "checksum": "8438cca740b3e4bda0f75899cfc5d46dd4d6756d", 
+    "dest": "/usr/local/zookeeper/conf/zoo.cfg", 
+    "gid": 0, 
+    "group": "root", 
+    "md5sum": "f95e188a350bff6f0ca84f97b9a30610", 
+    "mode": "0644", 
+    "owner": "root", 
+    "size": 204, 
+    "src": "/root/.ansible/tmp/ansible-tmp-1565706409.22-54006076669655/source", 
+    "state": "file", 
+    "uid": 0
+}
+2019-08-13 22:26:51,034 p=16734 u=root |  mesos-slave2 | SUCCESS => {
+    "changed": true, 
+    "checksum": "8438cca740b3e4bda0f75899cfc5d46dd4d6756d", 
+    "dest": "/usr/local/zookeeper/conf/zoo.cfg", 
+    "gid": 0, 
+    "group": "root", 
+    "md5sum": "f95e188a350bff6f0ca84f97b9a30610", 
+    "mode": "0644", 
+    "owner": "root", 
+    "size": 204, 
+    "src": "/root/.ansible/tmp/ansible-tmp-1565706409.29-78355359698014/source", 
+    "state": "file", 
+    "uid": 0
+}
+2019-08-13 22:26:51,087 p=16734 u=root |  mesos-slave1 | SUCCESS => {
+    "changed": true, 
+    "checksum": "8438cca740b3e4bda0f75899cfc5d46dd4d6756d", 
+    "dest": "/usr/local/zookeeper/conf/zoo.cfg", 
+    "gid": 0, 
+    "group": "root", 
+    "md5sum": "f95e188a350bff6f0ca84f97b9a30610", 
+    "mode": "0644", 
+    "owner": "root", 
+    "size": 204, 
+    "src": "/root/.ansible/tmp/ansible-tmp-1565706409.23-202390687996429/source", 
+    "state": "file", 
+    "uid": 0
+}
+2019-08-13 22:27:24,592 p=16874 u=root |  mesos-slave1 | SUCCESS | rc=0 >>
+ZooKeeper JMX enabled by default
+Using config: /usr/local/zookeeper/bin/../conf/zoo.cfg
+Starting zookeeper ... STARTED
+Shared connection to mesos-slave1 closed.
+
+
+2019-08-13 22:27:24,622 p=16874 u=root |  mesos-slave2 | SUCCESS | rc=0 >>
+ZooKeeper JMX enabled by default
+Using config: /usr/local/zookeeper/bin/../conf/zoo.cfg
+Starting zookeeper ... STARTED
+Shared connection to mesos-slave2 closed.
+
+
+2019-08-13 22:27:24,625 p=16874 u=root |  mesos-master1 | SUCCESS | rc=0 >>
+ZooKeeper JMX enabled by default
+Using config: /usr/local/zookeeper/bin/../conf/zoo.cfg
+Starting zookeeper ... STARTED
+Shared connection to mesos-master1 closed.
+
+
+2019-08-13 22:27:34,163 p=16917 u=root |  mesos-master1 | FAILED | rc=127 >>
+bash: jps: command not found
+Shared connection to mesos-master1 closed.
+non-zero return code
+
+2019-08-13 22:27:34,227 p=16917 u=root |  mesos-slave1 | FAILED | rc=127 >>
+bash: jps: command not found
+Shared connection to mesos-slave1 closed.
+non-zero return code
+
+2019-08-13 22:27:34,244 p=16917 u=root |  mesos-slave2 | FAILED | rc=127 >>
+bash: jps: command not found
+Shared connection to mesos-slave2 closed.
+non-zero return code
+
+2019-08-13 22:27:44,036 p=16949 u=root |  mesos-slave1 | SUCCESS | rc=0 >>
+root     11627 11334  0 22:27 pts/1    00:00:00 bash -c ps -ef|grep java
+root     11637 11627  0 22:27 pts/1    00:00:00 grep java
+Shared connection to mesos-slave1 closed.
+
+
+2019-08-13 22:27:44,050 p=16949 u=root |  mesos-slave2 | SUCCESS | rc=0 >>
+root     11593 11302  0 22:27 pts/1    00:00:00 bash -c ps -ef|grep java
+root     11603 11593  0 22:27 pts/1    00:00:00 grep java
+Shared connection to mesos-slave2 closed.
+
+
+2019-08-13 22:27:44,103 p=16949 u=root |  mesos-master1 | SUCCESS | rc=0 >>
+root     16949  9054 95 22:27 pts/1    00:00:01 /usr/bin/python2 /usr/bin/ansible all -m raw -a ps -ef|grep java
+root     16961 16949  0 22:27 pts/1    00:00:00 /usr/bin/python2 /usr/bin/ansible all -m raw -a ps -ef|grep java
+root     16965 16961  0 22:27 pts/1    00:00:00 ssh -C -o ControlMaster=auto -o ControlPersist=600s -o StrictHostKeyChecking=no -o KbdInteractiveAuthentication=no -o PreferredAuthentications=gssapi-with-mic,gssapi-keyex,hostbased,publickey -o PasswordAuthentication=no -o ConnectTimeout=30 -o ControlPath=/root/.ansible/cp/a8c6060f5e -tt mesos-master1 ps -ef|grep java
+root     16967 16189  0 22:27 pts/4    00:00:00 bash -c ps -ef|grep java
+root     16980 16967  0 22:27 pts/4    00:00:00 grep java
+Shared connection to mesos-master1 closed.
+
+
+2019-08-14 21:44:32,064 p=11660 u=root |   [WARNING]: Could not match supplied host pattern, ignoring: mesos-slave
+
+2019-08-14 21:44:32,067 p=11660 u=root |  PLAY [mesos-slave] **************************************************************************************************************************************************************************************************************************
+2019-08-14 21:44:32,067 p=11660 u=root |  skipping: no hosts matched
+2019-08-14 21:44:32,068 p=11660 u=root |  PLAY RECAP **********************************************************************************************************************************************************************************************************************************
+2019-08-14 21:44:59,894 p=11672 u=root |  PLAY [slave] ********************************************************************************************************************************************************************************************************************************
+2019-08-14 21:44:59,921 p=11672 u=root |  TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************************
+2019-08-14 21:45:02,173 p=11672 u=root |  ok: [mesos-slave1]
+2019-08-14 21:45:02,290 p=11672 u=root |  ok: [mesos-slave2]
+2019-08-14 21:45:02,296 p=11672 u=root |  TASK [mesos-slave : install mesos docker] ***************************************************************************************************************************************************************************************************
+2019-08-14 21:45:36,193 p=11672 u=root |  changed: [mesos-slave1] => (item=[u'docker', u'mesos'])
+2019-08-14 21:46:02,784 p=11672 u=root |  changed: [mesos-slave2] => (item=[u'docker', u'mesos'])
+2019-08-14 21:46:02,811 p=11672 u=root |  TASK [mesos-slave : containerizers] *********************************************************************************************************************************************************************************************************
+2019-08-14 21:46:03,717 p=11672 u=root |  changed: [mesos-slave1]
+2019-08-14 21:46:03,730 p=11672 u=root |  changed: [mesos-slave2]
+2019-08-14 21:46:03,752 p=11672 u=root |  TASK [mesos-slave : executor_registration_timeout] ******************************************************************************************************************************************************************************************
+2019-08-14 21:46:04,398 p=11672 u=root |  changed: [mesos-slave2]
+2019-08-14 21:46:04,432 p=11672 u=root |  changed: [mesos-slave1]
+2019-08-14 21:46:04,458 p=11672 u=root |  TASK [mesos-slave : copy zk config] *********************************************************************************************************************************************************************************************************
+2019-08-14 21:46:07,008 p=11672 u=root |  changed: [mesos-slave1]
+2019-08-14 21:46:07,045 p=11672 u=root |  changed: [mesos-slave2]
+2019-08-14 21:46:07,067 p=11672 u=root |  TASK [mesos-slave : start mesos-slave] ******************************************************************************************************************************************************************************************************
+2019-08-14 21:46:07,937 p=11672 u=root |  changed: [mesos-slave1]
+2019-08-14 21:46:08,009 p=11672 u=root |  changed: [mesos-slave2]
+2019-08-14 21:46:08,023 p=11672 u=root |  TASK [mesos-slave : start docker] ***********************************************************************************************************************************************************************************************************
+2019-08-14 21:46:10,608 p=11672 u=root |  changed: [mesos-slave1]
+2019-08-14 21:46:10,821 p=11672 u=root |  changed: [mesos-slave2]
+2019-08-14 21:46:10,827 p=11672 u=root |  PLAY RECAP **********************************************************************************************************************************************************************************************************************************
+2019-08-14 21:46:10,828 p=11672 u=root |  mesos-slave1               : ok=7    changed=6    unreachable=0    failed=0   
+2019-08-14 21:46:10,828 p=11672 u=root |  mesos-slave2               : ok=7    changed=6    unreachable=0    failed=0   
+2019-08-14 21:54:37,339 p=12318 u=root |  PLAY [marathon] *****************************************************************************************************************************************************************************************************************************
+2019-08-14 21:54:37,362 p=12318 u=root |  TASK [Gathering Facts] **********************************************************************************************************************************************************************************************************************
+2019-08-14 21:54:39,922 p=12318 u=root |  ok: [mesos-master1]
+2019-08-14 21:54:39,946 p=12318 u=root |  TASK [marathon : install marathon] **********************************************************************************************************************************************************************************************************
+2019-08-14 21:55:14,082 p=12318 u=root |  changed: [mesos-master1]
+2019-08-14 21:55:14,092 p=12318 u=root |  TASK [marathon : start marathon] ************************************************************************************************************************************************************************************************************
+2019-08-14 21:55:15,051 p=12318 u=root |  changed: [mesos-master1]
+2019-08-14 21:55:15,063 p=12318 u=root |  PLAY [marathon] *****************************************************************************************************************************************************************************************************************************
+2019-08-14 21:55:15,085 p=12318 u=root |  TASK [chronos : install chronos] ************************************************************************************************************************************************************************************************************
+2019-08-14 21:55:29,093 p=12318 u=root |  changed: [mesos-master1]
+2019-08-14 21:55:29,117 p=12318 u=root |  TASK [chronos : start chronos] **************************************************************************************************************************************************************************************************************
+2019-08-14 21:55:29,829 p=12318 u=root |  changed: [mesos-master1]
+2019-08-14 21:55:29,832 p=12318 u=root |  PLAY RECAP **********************************************************************************************************************************************************************************************************************************
+2019-08-14 21:55:29,833 p=12318 u=root |  mesos-master1              : ok=5    changed=4    unreachable=0    failed=0   
+2019-08-14 23:09:48,803 p=19769 u=root |  mesos-slave2 | SUCCESS | rc=0 >>
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: centos.ustc.edu.cn
+ * extras: mirrors.huaweicloud.com
+ * updates: mirrors.huaweicloud.com
+Resolving Dependencies
+--> Running transaction check
+---> Package nmap-ncat.x86_64 2:6.40-16.el7 will be installed
+--> Processing Dependency: libpcap.so.1()(64bit) for package: 2:nmap-ncat-6.40-16.el7.x86_64
+--> Running transaction check
+---> Package libpcap.x86_64 14:1.5.3-11.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package           Arch           Version                    Repository    Size
+================================================================================
+Installing:
+ nmap-ncat         x86_64         2:6.40-16.el7              base         206 k
+Installing for dependencies:
+ libpcap           x86_64         14:1.5.3-11.el7            base         138 k
+
+Transaction Summary
+================================================================================
+Install  1 Package (+1 Dependent package)
+
+Total download size: 344 k
+Installed size: 740 k
+Downloading packages:
+(1/2): libpcap-1.5.3-11.el7.x86_64.rpm                     | 138 kB   00:00     
+(2/2): nmap-ncat-6.40-16.el7.x86_64.rpm                    | 206 kB   00:00     
+--------------------------------------------------------------------------------
+Total                                              1.1 MB/s | 344 kB  00:00     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : 14:libpcap-1.5.3-11.el7.x86_ [                             ] 1/2  Installing : 14:libpcap-1.5.3-11.el7.x86_ [#####                        ] 1/2  Installing : 14:libpcap-1.5.3-11.el7.x86_ [###########                  ] 1/2  Installing : 14:libpcap-1.5.3-11.el7.x86_ [#################            ] 1/2  Installing : 14:libpcap-1.5.3-11.el7.x86_ [#######################      ] 1/2  Installing : 14:libpcap-1.5.3-11.el7.x86_ [##########################   ] 1/2  Installing : 14:libpcap-1.5.3-11.el7.x86_ [###########################  ] 1/2  Installing : 14:libpcap-1.5.3-11.el7.x86_ [############################ ] 1/2  Installing : 14:libpcap-1.5.3-11.el7.x86_64                               1/2 
+  Installing : 2:nmap-ncat-6.40-16.el7.x86_ [                             ] 2/2  Installing : 2:nmap-ncat-6.40-16.el7.x86_ [####                         ] 2/2  Installing : 2:nmap-ncat-6.40-16.el7.x86_ [########                     ] 2/2  Installing : 2:nmap-ncat-6.40-16.el7.x86_ [#############                ] 2/2  Installing : 2:nmap-ncat-6.40-16.el7.x86_ [#################            ] 2/2  Installing : 2:nmap-ncat-6.40-16.el7.x86_ [#####################        ] 2/2  Installing : 2:nmap-ncat-6.40-16.el7.x86_ [#########################    ] 2/2  Installing : 2:nmap-ncat-6.40-16.el7.x86_ [##########################   ] 2/2  Installing : 2:nmap-ncat-6.40-16.el7.x86_ [###########################  ] 2/2  Installing : 2:nmap-ncat-6.40-16.el7.x86_ [############################ ] 2/2  Installing : 2:nmap-ncat-6.40-16.el7.x86_64                               2/2 
+  Verifying  : 14:libpcap-1.5.3-11.el7.x86_64                               1/2 
+  Verifying  : 2:nmap-ncat-6.40-16.el7.x86_64                               2/2 
+
+Installed:
+  nmap-ncat.x86_64 2:6.40-16.el7                                                
+
+Dependency Installed:
+  libpcap.x86_64 14:1.5.3-11.el7                                                
+
+Complete!
+Shared connection to mesos-slave2 closed.
+
+
+2019-08-14 23:09:49,215 p=19769 u=root |  mesos-slave1 | SUCCESS | rc=0 >>
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirrors.aliyun.com
+ * extras: mirrors.aliyun.com
+ * updates: mirrors.neusoft.edu.cn
+Resolving Dependencies
+--> Running transaction check
+---> Package nmap-ncat.x86_64 2:6.40-16.el7 will be installed
+--> Processing Dependency: libpcap.so.1()(64bit) for package: 2:nmap-ncat-6.40-16.el7.x86_64
+--> Running transaction check
+---> Package libpcap.x86_64 14:1.5.3-11.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package           Arch           Version                    Repository    Size
+================================================================================
+Installing:
+ nmap-ncat         x86_64         2:6.40-16.el7              base         206 k
+Installing for dependencies:
+ libpcap           x86_64         14:1.5.3-11.el7            base         138 k
+
+Transaction Summary
+================================================================================
+Install  1 Package (+1 Dependent package)
+
+Total download size: 344 k
+Installed size: 740 k
+Downloading packages:
+(2/2): nmap-ncat-6.40-16.e 0% [                 ]  0.0 B/s |    0 B   --:-- ETA (1/2): libpcap-1.5.3-11.el7.x86_64.rpm                     | 138 kB   00:00     
+(2/2): nmap-ncat-6.40-16.el7.x86_64.rpm                    | 206 kB   00:00     
+--------------------------------------------------------------------------------
+Total                                              613 kB/s | 344 kB  00:00     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : 14:libpcap-1.5.3-11.el7.x86_ [                             ] 1/2  Installing : 14:libpcap-1.5.3-11.el7.x86_ [#####                        ] 1/2  Installing : 14:libpcap-1.5.3-11.el7.x86_ [###########                  ] 1/2  Installing : 14:libpcap-1.5.3-11.el7.x86_ [#################            ] 1/2  Installing : 14:libpcap-1.5.3-11.el7.x86_ [#######################      ] 1/2  Installing : 14:libpcap-1.5.3-11.el7.x86_ [##########################   ] 1/2  Installing : 14:libpcap-1.5.3-11.el7.x86_ [###########################  ] 1/2  Installing : 14:libpcap-1.5.3-11.el7.x86_ [############################ ] 1/2  Installing : 14:libpcap-1.5.3-11.el7.x86_64                               1/2 
+  Installing : 2:nmap-ncat-6.40-16.el7.x86_ [                             ] 2/2  Installing : 2:nmap-ncat-6.40-16.el7.x86_ [####                         ] 2/2  Installing : 2:nmap-ncat-6.40-16.el7.x86_ [########                     ] 2/2  Installing : 2:nmap-ncat-6.40-16.el7.x86_ [#############                ] 2/2  Installing : 2:nmap-ncat-6.40-16.el7.x86_ [#################            ] 2/2  Installing : 2:nmap-ncat-6.40-16.el7.x86_ [#####################        ] 2/2  Installing : 2:nmap-ncat-6.40-16.el7.x86_ [#########################    ] 2/2  Installing : 2:nmap-ncat-6.40-16.el7.x86_ [##########################   ] 2/2  Installing : 2:nmap-ncat-6.40-16.el7.x86_ [###########################  ] 2/2  Installing : 2:nmap-ncat-6.40-16.el7.x86_ [############################ ] 2/2  Installing : 2:nmap-ncat-6.40-16.el7.x86_64                               2/2 
+  Verifying  : 14:libpcap-1.5.3-11.el7.x86_64                               1/2 
+  Verifying  : 2:nmap-ncat-6.40-16.el7.x86_64                               2/2 
+
+Installed:
+  nmap-ncat.x86_64 2:6.40-16.el7                                                
+
+Dependency Installed:
+  libpcap.x86_64 14:1.5.3-11.el7                                                
+
+Complete!
+Shared connection to mesos-slave1 closed.
+
+
+2019-08-14 23:09:50,607 p=19769 u=root |  mesos-master1 | SUCCESS | rc=0 >>
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirror.bit.edu.cn
+ * extras: mirrors.huaweicloud.com
+ * updates: mirrors.huaweicloud.com
+Resolving Dependencies
+--> Running transaction check
+---> Package nmap-ncat.x86_64 2:6.40-16.el7 will be installed
+--> Processing Dependency: libpcap.so.1()(64bit) for package: 2:nmap-ncat-6.40-16.el7.x86_64
+--> Running transaction check
+---> Package libpcap.x86_64 14:1.5.3-11.el7 will be installed
+--> Finished Dependency Resolution
+
+Dependencies Resolved
+
+================================================================================
+ Package           Arch           Version                    Repository    Size
+================================================================================
+Installing:
+ nmap-ncat         x86_64         2:6.40-16.el7              base         206 k
+Installing for dependencies:
+ libpcap           x86_64         14:1.5.3-11.el7            base         138 k
+
+Transaction Summary
+================================================================================
+Install  1 Package (+1 Dependent package)
+
+Total download size: 344 k
+Installed size: 740 k
+Downloading packages:
+(1/2): libpcap-1.5.3-11.el7.x86_64.rpm                     | 138 kB   00:00     
+(2/2): nmap-ncat-6.40-16.el7.x86_64.rpm                    | 206 kB   00:00     
+--------------------------------------------------------------------------------
+Total                                              985 kB/s | 344 kB  00:00     
+Running transaction check
+Running transaction test
+Transaction test succeeded
+Running transaction
+  Installing : 14:libpcap-1.5.3-11.el7.x86_ [                             ] 1/2  Installing : 14:libpcap-1.5.3-11.el7.x86_ [#####                        ] 1/2  Installing : 14:libpcap-1.5.3-11.el7.x86_ [###########                  ] 1/2  Installing : 14:libpcap-1.5.3-11.el7.x86_ [#################            ] 1/2  Installing : 14:libpcap-1.5.3-11.el7.x86_ [#######################      ] 1/2  Installing : 14:libpcap-1.5.3-11.el7.x86_ [##########################   ] 1/2  Installing : 14:libpcap-1.5.3-11.el7.x86_ [###########################  ] 1/2  Installing : 14:libpcap-1.5.3-11.el7.x86_ [############################ ] 1/2  Installing : 14:libpcap-1.5.3-11.el7.x86_64                               1/2 
+  Installing : 2:nmap-ncat-6.40-16.el7.x86_ [                             ] 2/2  Installing : 2:nmap-ncat-6.40-16.el7.x86_ [####                         ] 2/2  Installing : 2:nmap-ncat-6.40-16.el7.x86_ [########                     ] 2/2  Installing : 2:nmap-ncat-6.40-16.el7.x86_ [#############                ] 2/2  Installing : 2:nmap-ncat-6.40-16.el7.x86_ [#################            ] 2/2  Installing : 2:nmap-ncat-6.40-16.el7.x86_ [#####################        ] 2/2  Installing : 2:nmap-ncat-6.40-16.el7.x86_ [#########################    ] 2/2  Installing : 2:nmap-ncat-6.40-16.el7.x86_ [##########################   ] 2/2  Installing : 2:nmap-ncat-6.40-16.el7.x86_ [###########################  ] 2/2  Installing : 2:nmap-ncat-6.40-16.el7.x86_ [############################ ] 2/2  Installing : 2:nmap-ncat-6.40-16.el7.x86_64                               2/2 
+  Verifying  : 14:libpcap-1.5.3-11.el7.x86_64                               1/2 
+  Verifying  : 2:nmap-ncat-6.40-16.el7.x86_64                               2/2 
+
+Installed:
+  nmap-ncat.x86_64 2:6.40-16.el7                                                
+
+Dependency Installed:
+  libpcap.x86_64 14:1.5.3-11.el7                                                
+
+Complete!
+Shared connection to mesos-master1 closed.
+
+

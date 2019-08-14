@@ -1,0 +1,16 @@
+[Unit]
+Description=ZooKeeper
+After=network.target
+
+[Service]
+Type=forking
+Environment="ZOOCFGDIR=/usr/local/zookeeper/conf/zoo.cfg"
+SyslogIdentifier=zookeeper
+WorkingDirectory=/usr/local/zookeeper
+ExecStart=/usr/local/zookeeper/bin/zkServer.sh start
+ExecStop=/usr/local/zookeeper/bin/zkServer.sh stop
+User=root
+Group=root
+
+[Install]
+WantedBy=multi-user.target
